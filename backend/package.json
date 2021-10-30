@@ -4,7 +4,7 @@
   "description": "Technical challenge proposed by Etyrb for a JR. Web developer position",
   "main": "./src/api/server.js",
   "scripts": {
-    "test": "mocha ./__tests__/**/*$NAME*.test.js --exit",
+    "test": "mocha ./src/__tests__/**/*$NAME*.{test,spec}.js --exit",
     "test:coverage": "nyc --include='src/**/*.js' npm run test",
     "dev": "nodemon ."
   },
