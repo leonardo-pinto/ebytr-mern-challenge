@@ -29,8 +29,9 @@ const login = async (req, res, next) => {
     return next({ code: 'incorrectLogin', message: 'Incorrect email or password' });
   }
 
-  const { _id: userId } = userData;
-  const token = jwt.sign({ data: { userId, email } }, process.env.JWT_SECRET, jwtConfiguration);
+  const { _id: userId, name } = userData;
+  const token = jwt.sign({ data: { userId, email, name } }, 
+    process.env.JWT_SECRET, jwtConfiguration);
 
   return res.status(200).json({ token });
 };
