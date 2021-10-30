@@ -15,6 +15,13 @@ const findEmail = async (email) => {
   return false;
 };
 
+const findUserByEmail = async (email) => {
+  const db = await dbConnection();
+  const user = await db.findOne({ email });
+
+  return user;
+};
+
 const createUser = async (name, email, password) => {
   const db = await dbConnection();
   const { insertedId: id } = await db.insertOne({ name, email, password });
@@ -25,4 +32,5 @@ const createUser = async (name, email, password) => {
 module.exports = {
   findEmail,
   createUser,
+  findUserByEmail,
 };
