@@ -193,6 +193,8 @@ describe('/POST /signup', () => {
     let response;
 
     before(async () => {
+      const usersCollection = connectionMock.db('TodoList').collection('users');
+      await usersCollection.deleteMany({});
       response = await chai.request(server)
         .post('/signup')
         .send({ name: validName, email: validEmail, password: validPassword });
