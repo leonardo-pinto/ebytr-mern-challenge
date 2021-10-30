@@ -6,9 +6,7 @@ const { getConnection } = require('./connectionMock');
 const server = require('../../api/app');
 
 chai.use(chaiHttp);
-
 const { expect } = chai;
-
 const validName = 'username';
 const invalidName = 'a';
 const validEmail = 'email@email.com';
