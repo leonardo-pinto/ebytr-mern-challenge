@@ -1,0 +1,29 @@
+{
+  "name": "etyrb-mern-challenge",
+  "version": "1.0.0",
+  "description": "Technical challenge proposed by Etyrb for a JR. Web developer position",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Pinto",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-rescue": "^1.1.31",
+    "mongodb": "^4.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "eslint": "^8.1.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "mocha": "^9.1.3",
+    "mongodb-memory-server": "^6.9.6",
+    "nodemon": "^2.0.14",
+    "sinon": "^11.1.2"
+  }
+}
