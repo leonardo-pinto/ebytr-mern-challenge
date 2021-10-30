@@ -7,6 +7,7 @@ module.exports = (err, _req, res, _next) => {
 
   const codeDictionaryErr = {
     emailExists: 409,
+    incorrectLogin: 401,
   };
 
   if (err.code) {

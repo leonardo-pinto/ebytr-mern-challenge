@@ -6,9 +6,7 @@ const { getConnection } = require('./connectionMock');
 const server = require('../../api/app');
 
 chai.use(chaiHttp);
-
 const { expect } = chai;
-
 const validName = 'username';
 const invalidName = 'a';
 const validEmail = 'email@email.com';
@@ -193,6 +191,8 @@ describe('/POST /signup', () => {
     let response;
 
     before(async () => {
+      const usersCollection = connectionMock.db('TodoList').collection('users');
+      await usersCollection.deleteMany({});
       response = await chai.request(server)
         .post('/signup')
         .send({ name: validName, email: validEmail, password: validPassword });
