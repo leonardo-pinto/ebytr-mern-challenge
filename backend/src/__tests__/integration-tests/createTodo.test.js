@@ -14,9 +14,8 @@ const validEmail = 'email@email.com';
 const validPassword = '123456';
 const todoExample = 'todo';
 
-// const statusCode400Message = 'returns a 400 status code';
-// const objectWithBodyMessage = 'returns an object with a body';
-// const objectAttributeMessage = 'the object has a "message" attribute';
+const objectWithBodyMessage = 'returns an object with a body';
+const objectAttributeMessage = 'the object has a "message" attribute';
 
 describe('/POST /todos', () => {
   let connectionMock;
@@ -54,11 +53,11 @@ describe('/POST /todos', () => {
       expect(response).to.have.status(401);
     });
 
-    it('returns an object with a body', () => {
+    it(`${objectWithBodyMessage}`, () => {
       expect(response.body).to.be.an('object');
     });
 
-    it('the object has a "message" attribute', () => {
+    it(`${objectAttributeMessage}`, () => {
       expect(response.body).to.have.property('message');
     });
 
@@ -92,11 +91,11 @@ describe('/POST /todos', () => {
       expect(response).to.have.status(401);
     });
   
-    it('returns an object with a body', () => {
+    it(`${objectWithBodyMessage}`, () => {
       expect(response.body).to.be.an('object');
     });
   
-    it('the object has a "message" attribute', () => {
+    it(`${objectAttributeMessage}`, () => {
       expect(response.body).to.have.property('message');
     });
   
@@ -129,11 +128,11 @@ describe('/POST /todos', () => {
       expect(response).to.have.status(400);
     });
   
-    it('returns an object with a body', () => {
+    it(`${objectWithBodyMessage}`, () => {
       expect(response.body).to.be.an('object');
     });
   
-    it('the object has a "message" attribute', () => {
+    it(`${objectAttributeMessage}`, () => {
       expect(response.body).to.have.property('message');
     });
   
@@ -167,7 +166,7 @@ describe('/POST /todos', () => {
       expect(response).to.have.status(201);
     });
   
-    it('returns an object with a body', () => {
+    it(`${objectWithBodyMessage}`, () => {
       expect(response.body).to.be.an('object');
     });
   
