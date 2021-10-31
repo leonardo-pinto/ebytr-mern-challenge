@@ -10,6 +10,8 @@ module.exports = (err, _req, res, _next) => {
     incorrectLogin: 401,
     noToken: 401,
     jwtMalformed: 401,
+    invalidUserId: 401,
+    notFound: 404,
   };
 
   if (err.code) {

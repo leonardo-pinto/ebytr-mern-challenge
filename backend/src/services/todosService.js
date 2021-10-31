@@ -9,6 +9,12 @@ const create = async (todo, userId) => {
   return newTodo;
 };
 
+const findTodoById = (todoId) => todosModel.findTodoById(todoId);
+
+const exclude = (todoId) => todosModel.exclude(todoId);
+
 module.exports = {
   create,
+  exclude,
+  findTodoById,
 };
