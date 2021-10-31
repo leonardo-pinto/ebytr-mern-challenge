@@ -8,6 +8,10 @@ module.exports = (err, _req, res, _next) => {
   const codeDictionaryErr = {
     emailExists: 409,
     incorrectLogin: 401,
+    noToken: 401,
+    jwtMalformed: 401,
+    invalidUserId: 401,
+    notFound: 404,
   };
 
   if (err.code) {

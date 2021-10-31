@@ -145,7 +145,7 @@ describe('/POST /login', () => {
     let response;
   
     before(async () => {
-      const usersCollection = connectionMock.db('Cookmaster').collection('users');
+      const usersCollection = connectionMock.db('TodoList').collection('users');
       await usersCollection.insertOne({
         name: validName,
         email: validEmail,
