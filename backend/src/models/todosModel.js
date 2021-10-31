@@ -32,8 +32,16 @@ const exclude = async (todoId) => {
   return true;
 };
 
+const getAllTodos = async () => {
+  const db = await dbConnection();
+  const todos = await db.find().toArray();
+
+  return todos;
+};
+
 module.exports = {
   create,
   findTodoById,
   exclude,
+  getAllTodos,
 };

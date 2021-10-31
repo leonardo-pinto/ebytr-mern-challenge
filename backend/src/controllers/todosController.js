@@ -23,7 +23,14 @@ const exclude = async (req, res, next) => {
   res.status(204).send();
 };
 
+const getAllTodos = async (_req, res, _next) => {
+  const todos = await todosService.getAllTodos();
+
+  return res.status(200).json(todos);
+};
+
 module.exports = {
   create,
   exclude,
+  getAllTodos,
 };

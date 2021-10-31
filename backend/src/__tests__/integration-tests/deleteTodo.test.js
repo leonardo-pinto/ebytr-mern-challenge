@@ -118,6 +118,7 @@ describe('/DELETE /todos/:todoId', () => {
   describe('when the todo is deleted successfully', () => {
     let response;
   
+    // eslint-disable-next-line mocha/no-hooks-for-single-case
     before(async () => {
       const usersCollection = connectionMock.db('TodoList').collection('users');
       await usersCollection.insertOne({ 

@@ -4,6 +4,7 @@ const validateNewTodo = require('../middlewares/validateNewTodo');
 const todosControllers = require('../controllers/todosController');
 
 router.delete('/:todoId', validateJWT, todosControllers.exclude);
+router.get('/', todosControllers.getAllTodos);
 router.post('/', validateJWT, validateNewTodo, todosControllers.create);
 
 module.exports = router;
