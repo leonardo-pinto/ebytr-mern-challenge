@@ -13,11 +13,14 @@ const findTodoById = (todoId) => todosModel.findTodoById(todoId);
 
 const exclude = (todoId) => todosModel.exclude(todoId);
 
-const getAllTodos = async () => todosModel.getAllTodos();
+const getAll = () => todosModel.getAll();
+
+const update = (todoData) => todosModel.update(todoData);
 
 module.exports = {
   create,
   exclude,
   findTodoById,
-  getAllTodos,
+  getAll,
+  update,
 };

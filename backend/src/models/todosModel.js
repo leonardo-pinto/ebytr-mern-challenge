@@ -32,16 +32,31 @@ const exclude = async (todoId) => {
   return true;
 };
 
-const getAllTodos = async () => {
+const getAll = async () => {
   const db = await dbConnection();
   const todos = await db.find().toArray();
 
   return todos;
 };
 
+const update = async ({ todo, status, createdAt, todoId, userId }) => {
+  const db = await dbConnection();
+  await db.findOneAndUpdate({ _id: ObjectId(todoId) },
+  { $set: { userId, todo, status, createdAt } });
+
+  return {
+    todoId,
+    userId,
+    todo,
+    status,
+    createdAt,
+  };
+};
+
 module.exports = {
   create,
   findTodoById,
   exclude,
-  getAllTodos,
+  getAll,
+  update,
 };

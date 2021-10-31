@@ -23,14 +23,30 @@ const exclude = async (req, res, next) => {
   res.status(204).send();
 };
 
-const getAllTodos = async (_req, res, _next) => {
-  const todos = await todosService.getAllTodos();
+const getAll = async (_req, res, _next) => {
+  const todos = await todosService.getAll();
 
   return res.status(200).json(todos);
+};
+
+const update = async (req, res, next) => {
+  const { userId } = req.user;
+  const { todoId } = req.params;
+
+  const todoToUpdate = await todosService.findTodoById(todoId);
+
+  if (!todoToUpdate) {
+    return next({ code: 'notFound', message: 'Todo id not found' });
+  }
+
+  const updatedTodo = await todosService.update({ ...req.body, todoId, userId });
+
+  return res.status(200).json(updatedTodo);
 };
 
 module.exports = {
   create,
   exclude,
-  getAllTodos,
+  getAll,
+  update,
 };
