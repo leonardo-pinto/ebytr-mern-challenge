@@ -118,7 +118,6 @@ describe('/PUT /todos/:todoId', () => {
     });
   
     it('the object has the attributes "id", "userId", "todo", "status", "createdAt"', () => {
-      console.log(response.body);
       expect(response.body).to.include.all.keys('todoId', 'userId', 'todo', 'status', 'createdAt');
     });
 

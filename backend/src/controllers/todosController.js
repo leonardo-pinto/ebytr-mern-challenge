@@ -12,13 +12,11 @@ const create = async (req, res) => {
 const exclude = async (req, res, next) => {
   const { todoId } = req.params;
 
-  const todoToDelete = await todosService.findTodoById(todoId);
+  const response = await todosService.exclude(todoId);
 
-  if (!todoToDelete) {
-    return next({ code: 'notFound', message: 'Todo id not found' });
+  if (response.err) {
+    return next(response.err);
   }
-
-  await todosService.exclude(todoId);
 
   res.status(204).send();
 };
@@ -33,13 +31,11 @@ const update = async (req, res, next) => {
   const { userId } = req.user;
   const { todoId } = req.params;
 
-  const todoToUpdate = await todosService.findTodoById(todoId);
-
-  if (!todoToUpdate) {
-    return next({ code: 'notFound', message: 'Todo id not found' });
-  }
-
   const updatedTodo = await todosService.update({ ...req.body, todoId, userId });
+
+  if (updatedTodo.err) {
+    return next(updatedTodo.err);
+  }
 
   return res.status(200).json(updatedTodo);
 };

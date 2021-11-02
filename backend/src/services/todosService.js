@@ -9,18 +9,41 @@ const create = async (todo, userId) => {
   return newTodo;
 };
 
-const findTodoById = (todoId) => todosModel.findTodoById(todoId);
+const exclude = async (todoId) => {
+  const response = await todosModel.findTodoById(todoId);
 
-const exclude = (todoId) => todosModel.exclude(todoId);
+  if (!response) {
+    return { err: { code: 'notFound', message: 'Todo id not found' } };
+  }
 
-const getAll = () => todosModel.getAll();
+  await todosModel.exclude(todoId);
 
-const update = (todoData) => todosModel.update(todoData);
+  return {};
+};
+
+const getAll = async () => {
+  const todos = await todosModel.getAll();
+  
+  return todos;
+};
+
+const update = async (todoData) => {
+  const { todoId } = todoData;
+
+  const response = await todosModel.findTodoById(todoId);
+
+  if (!response) {
+    return { err: { code: 'notFound', message: 'Todo id not found' } };
+  }
+
+  const updatedTodo = await todosModel.update(todoData);
+
+  return updatedTodo;
+};
 
 module.exports = {
   create,
   exclude,
-  findTodoById,
   getAll,
   update,
 };
