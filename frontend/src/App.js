@@ -1,10 +1,14 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Todos from './pages/Todos';
 
 function App() {
   return (
-    <div className="text-blue-900">
-      Olá
-    </div>
+    <Switch>
+      <Route path="/login" component={ Login } />
+      <Route path="/" component={ Todos } />
+    </Switch>
   );
 }
 
