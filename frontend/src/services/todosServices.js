@@ -14,10 +14,13 @@ export const setHeaders = () => {
 
 export function login(email, password) {
   axios.post(`${apiUrl}/login`, { email, password })
-    .then((token) => localStorage.setItem('token', token))
-    .catch((err) => console.log('mensagem de erro', err));
+    .then((res) => localStorage.setItem('token', res.data.token))
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
 }
 
-export function signUp() {
-  console.log('teste');
+export function signUp(name, email, password) {
+  axios.post(`${apiUrl}/signup`, { name, email, password })
+    .then((res) => console.log(res.data.message))
+    .catch((err) => console.log(err));
 }

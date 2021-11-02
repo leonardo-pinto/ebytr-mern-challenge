@@ -16,17 +16,10 @@ function LoginForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    console.log('handleSubmit');
-    e.preventDefault();
-    login(email, password);
-    console.log('pós handleSubmit');
-  };
-
   useEffect(() => {
     const format = /\S+@\S+\.\S+/;
-    const minPassword = 6;
-    if (password.length > minPassword && email.match(format)) {
+    const minPasswordLength = 6;
+    if (password.length > minPasswordLength && email.match(format)) {
       setDisableLoginBtn(false);
     } else {
       setDisableLoginBtn(true);
@@ -34,10 +27,7 @@ function LoginForm() {
   }, [email, password]);
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={ handleSubmit }
-    >
+    <form>
       <label htmlFor="email">
         <input
           name="email"
