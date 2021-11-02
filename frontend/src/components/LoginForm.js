@@ -17,8 +17,10 @@ function LoginForm() {
   };
 
   const handleSubmit = (e) => {
+    console.log('handleSubmit');
     e.preventDefault();
     login(email, password);
+    console.log('pós handleSubmit');
   };
 
   useEffect(() => {
@@ -57,9 +59,10 @@ function LoginForm() {
         />
       </label>
       <button
-        type="submit"
+        type="button"
         data-testid="button-login"
         disabled={ disableLoginBtn }
+        onClick={ () => login(email, password) }
       >
         Login
       </button>
