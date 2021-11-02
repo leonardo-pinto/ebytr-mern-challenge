@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { login } from '../services/todosServices';
 
 function LoginForm() {
@@ -56,6 +57,10 @@ function LoginForm() {
       >
         Login
       </button>
+      <div>
+        <p>Don&apos;t have an account?</p>
+        <Link to="/signup">Sign Up now!</Link>
+      </div>
     </form>
   );
 }

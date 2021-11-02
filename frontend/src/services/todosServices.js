@@ -15,7 +15,6 @@ export const setHeaders = () => {
 export function login(email, password) {
   axios.post(`${apiUrl}/login`, { email, password })
     .then((res) => localStorage.setItem('token', res.data.token))
-    .then((response) => console.log(response))
     .catch((err) => console.log(err));
 }
 
