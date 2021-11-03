@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTodos } from '../redux/actions/todosActions';
@@ -17,7 +18,7 @@ function ListTodos() {
         ? (
           <div>
             { todos.map((todo) => (
-              <div key={ todo.id }>
+              <div key={ todo._id }>
                 <Todo todo={ todo } />
               </div>
             )) }

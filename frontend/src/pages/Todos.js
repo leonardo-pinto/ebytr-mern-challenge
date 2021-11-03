@@ -15,7 +15,6 @@ function Todos() {
       <Header />
       <AddTodo />
       <ListTodos />
-      Todos page
     </div>
   );
 }

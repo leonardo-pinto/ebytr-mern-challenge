@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 function Todo(props) {
   const { todo: { todo, status, createdAt } } = props;
-
+  console.log(typeof createdAt);
   return (
     <div>
       <p>{todo}</p>
-      <p>{status}</p>
-      <p>{createdAt}</p>
+      <p>{`Status: ${status}`}</p>
+      <p>{`Created at: ${createdAt}`}</p>
     </div>
   );
 }
