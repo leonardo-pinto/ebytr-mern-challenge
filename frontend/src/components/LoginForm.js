@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { login } from '../services/todosServices';
+import { login, retrieveUserDataFromToken } from '../services/todosServices';
+import userContext from '../context/userContext';
 
 function LoginForm() {
+  const { setUserData } = useContext(userContext);
   const [loginInput, setLoginInput] = useState({
     email: '',
     password: '',
@@ -17,6 +19,12 @@ function LoginForm() {
     });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await login(email, password);
+    setUserData(() => retrieveUserDataFromToken());
+  };
+
   useEffect(() => {
     const format = /\S+@\S+\.\S+/;
     const minPasswordLength = 6;
@@ -28,7 +36,9 @@ function LoginForm() {
   }, [email, password]);
 
   return (
-    <form>
+    <form
+      onSubmit={ handleSubmit }
+    >
       <label htmlFor="email">
         <input
           name="email"
@@ -50,10 +60,9 @@ function LoginForm() {
         />
       </label>
       <button
-        type="button"
+        type="submit"
         data-testid="button-login"
         disabled={ disableLoginBtn }
-        onClick={ () => login(email, password) }
       >
         Login
       </button>

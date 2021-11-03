@@ -1,20 +1,15 @@
 /* eslint-disable react/jsx-closing-tag-location */
-import React, { useEffect, useState } from 'react';
-import { retrieveUserNameFromToken } from '../services/todosServices';
+import React, { useContext } from 'react';
+import userContext from '../context/userContext';
 
 function Header() {
-  const [userLogged, setUserLogged] = useState('');
-
-  console.log('userLogged', userLogged);
-  useEffect(() => {
-    setUserLogged(retrieveUserNameFromToken());
-  }, []);
+  const { userData } = useContext(userContext);
 
   return (
     <header>
       <h1>App name</h1>
-      { userLogged && <p>
-        {`Hello, ${userLogged}`}
+      { userData && <p>
+        {`Hello, ${userData.userId}`}
       </p>}
       <span>
         <p>Sign Out</p>

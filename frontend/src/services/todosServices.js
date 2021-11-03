@@ -15,10 +15,13 @@ export function setHeaders() {
   return header;
 }
 
-export function login(email, password) {
-  axios.post(`${apiUrl}/login`, { email, password })
-    .then((res) => localStorage.setItem('token', res.data.token))
-    .catch((err) => console.log(err.response.data.message));
+export async function login(email, password) {
+  try {
+    const response = await axios.post(`${apiUrl}/login`, { email, password });
+    localStorage.setItem('token', response.data.token);
+  } catch (err) {
+    console.log(err.response.data.message);
+  }
 }
 
 export function signUp(name, email, password) {
@@ -32,5 +35,6 @@ export function retrieveUserDataFromToken() {
   if (!token) {
     return null;
   }
+
   return jwtDecode(token).data;
 }

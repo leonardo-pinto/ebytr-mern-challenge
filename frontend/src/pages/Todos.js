@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import userContext from '../context/userContext';
+import Header from '../components/Header';
 
 function Todos() {
   const { userData } = useContext(userContext);
@@ -9,6 +10,7 @@ function Todos() {
 
   return (
     <div>
+      <Header />
       Todos page
     </div>
   );
