@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import AddTodo from '../components/AddTodo';
+import SortBarTodos from '../components/SortBarTodos';
 import ListTodos from '../components/ListTodos';
 
 function Todos() {
@@ -14,6 +15,7 @@ function Todos() {
     <div>
       <Header />
       <AddTodo />
+      <SortBarTodos />
       <ListTodos />
     </div>
   );

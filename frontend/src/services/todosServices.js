@@ -9,3 +9,14 @@ export function setHeaders() {
 
   return header;
 }
+
+export function getSortedTodos(state) {
+  const { sort: { parameter, order } } = state.todos;
+  const { todos } = state.todos;
+
+  return todos.sort((a, b) => (
+    (order === 'asc')
+      ? a[parameter].localeCompare(b[parameter])
+      : b[parameter].localeCompare(a[parameter])
+  ));
+}
