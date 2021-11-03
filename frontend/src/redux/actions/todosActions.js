@@ -29,7 +29,6 @@ export const addTodo = (todo) => async (dispatch) => {
 
 export const deleteTodo = (_id) => async (dispatch) => {
   try {
-    console.log('todoId', _id);
     await axios.delete(`${apiUrl}/todos/${_id}`, setHeaders());
     dispatch({
       type: 'DELETE_TODO',
@@ -56,4 +55,12 @@ export const updateTodo = (editedTodo) => async (dispatch) => {
   } catch (err) {
     console.log(err.response);
   }
+};
+
+export const sortTodos = (parameter, order) => (dispatch) => {
+  dispatch({
+    type: 'SORT_TODO',
+    parameter,
+    order,
+  });
 };

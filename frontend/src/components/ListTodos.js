@@ -2,11 +2,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTodos } from '../redux/actions/todosActions';
+import { getSortedTodos } from '../services/todosServices';
 import Todo from './Todo';
 
 function ListTodos() {
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos);
+  useSelector(getSortedTodos);
+  const { todos } = useSelector((state) => state.todos);
 
   useEffect(() => {
     dispatch(getTodos());
