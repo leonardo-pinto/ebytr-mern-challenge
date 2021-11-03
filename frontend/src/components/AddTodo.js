@@ -1,13 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/actions/todosActions';
 
-function AddTodo({ todo, setTodo }) {
+function AddTodo() {
+  const [todo, setTodo] = useState('');
   const dispatch = useDispatch();
 
   const handleAddTodoClick = () => {
-    dispatch(addTodo(todo));
+    if (todo !== '') {
+      dispatch(addTodo(todo));
+      setTodo('');
+    }
   };
 
   return (
@@ -34,8 +37,3 @@ function AddTodo({ todo, setTodo }) {
 }
 
 export default AddTodo;
-
-AddTodo.propTypes = {
-  todo: PropTypes.string.isRequired,
-  setTodo: PropTypes.func.isRequired,
-};

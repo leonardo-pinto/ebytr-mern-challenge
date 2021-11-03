@@ -22,7 +22,13 @@ const userReducer = (state = initialState, action) => {
       token: action.token,
     };
   }
-  case 'SIGNOUT': return state;
+  case 'SIGNOUT':
+    return {
+      name: null,
+      email: null,
+      userId: null,
+      token: null,
+    };
   default:
     return state;
   }

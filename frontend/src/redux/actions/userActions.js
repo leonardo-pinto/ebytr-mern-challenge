@@ -19,20 +19,19 @@ export const userLogin = (email, password) => async (dispatch) => {
       token: response.data.token,
     });
   } catch (err) {
-    console.log(err);
+    console.log(err.response);
   }
 };
 
 export const signUp = (name, email, password) => async (dispatch) => {
   try {
-    const response = await axios.post(`${apiUrl}/signup`, { name, email, password });
-    console.log(response.data.message);
+    await axios.post(`${apiUrl}/signup`, { name, email, password });
 
     dispatch({
       type: 'SIGNUP',
     });
   } catch (err) {
-    console.log(err);
+    console.log(err.response);
   }
 };
 
