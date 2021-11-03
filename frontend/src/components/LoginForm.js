@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login, retrieveUserDataFromToken } from '../services/todosServices';
-import userContext from '../context/userContext';
+import { userLogin } from '../redux/actions/userActions';
 
 function LoginForm() {
-  const { setUserData } = useContext(userContext);
+  const dispatch = useDispatch();
   const [loginInput, setLoginInput] = useState({
     email: '',
     password: '',
@@ -19,10 +19,9 @@ function LoginForm() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await login(email, password);
-    setUserData(() => retrieveUserDataFromToken());
+    dispatch(userLogin(email, password));
   };
 
   useEffect(() => {

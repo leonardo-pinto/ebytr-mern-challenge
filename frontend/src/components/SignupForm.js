@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { signUp } from '../services/todosServices';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../redux/actions/userActions';
 
 function SignupForm() {
+  const dispatch = useDispatch();
   const [signupInput, setSignupInput] = useState({
     name: '',
     email: '',
@@ -31,8 +33,15 @@ function SignupForm() {
     }
   }, [name, email, password]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signUp(name, email, password));
+  };
+
   return (
-    <form>
+    <form
+      onSubmit={ handleSubmit }
+    >
       <label htmlFor="name">
         <input
           name="name"
@@ -65,9 +74,8 @@ function SignupForm() {
       </label>
       <button
         type="button"
-        data-testid="button-login"
+        data-testid="button-signup"
         disabled={ disableSignupBtn }
-        onClick={ () => signUp(name, email, password) }
       >
         Sign Up
       </button>

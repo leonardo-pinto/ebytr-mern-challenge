@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-closing-tag-location */
-import React, { useContext } from 'react';
-import userContext from '../context/userContext';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Header() {
-  const { userData } = useContext(userContext);
+  const user = useSelector((state) => state.user);
 
   return (
     <header>
       <h1>App name</h1>
-      { userData && <p>
-        {`Hello, ${userData.userId}`}
+      { user && <p>
+        {`Hello, ${user.name}`}
       </p>}
       <span>
         <p>Sign Out</p>
