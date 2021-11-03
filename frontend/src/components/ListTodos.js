@@ -7,7 +7,7 @@ import Todo from './Todo';
 function ListTodos() {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos);
-  console.log('listTodos => todos', todos);
+
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);

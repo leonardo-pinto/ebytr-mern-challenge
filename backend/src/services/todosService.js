@@ -1,7 +1,7 @@
 const todosModel = require('../models/todosModel');
 
 const create = async (todo, userId) => {
-  const status = 'pending';
+  const status = 'Pending';
   const rawDate = new Date().toString();
   const createdAt = rawDate.split('G')[0];
 
