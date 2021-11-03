@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login } from '../services/todosServices';
+import { userLogin } from '../redux/actions/userActions';
 
 function LoginForm() {
+  const dispatch = useDispatch();
   const [loginInput, setLoginInput] = useState({
     email: '',
     password: '',
@@ -17,6 +19,11 @@ function LoginForm() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(userLogin(email, password));
+  };
+
   useEffect(() => {
     const format = /\S+@\S+\.\S+/;
     const minPasswordLength = 6;
@@ -28,7 +35,9 @@ function LoginForm() {
   }, [email, password]);
 
   return (
-    <form>
+    <form
+      onSubmit={ handleSubmit }
+    >
       <label htmlFor="email">
         <input
           name="email"
@@ -50,10 +59,9 @@ function LoginForm() {
         />
       </label>
       <button
-        type="button"
+        type="submit"
         data-testid="button-login"
         disabled={ disableLoginBtn }
-        onClick={ () => login(email, password) }
       >
         Login
       </button>

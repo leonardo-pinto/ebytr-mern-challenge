@@ -1,15 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
-import userContext from '../context/userContext';
+import { useSelector } from 'react-redux';
+import Header from '../components/Header';
+import AddTodo from '../components/AddTodo';
+import ListTodos from '../components/ListTodos';
 
 function Todos() {
-  const { userData } = useContext(userContext);
+  const user = useSelector((state) => state.user);
 
-  if (!userData) return <Redirect to="/login" />;
+  if (!user.userId) return <Redirect to="/login" />;
 
   return (
     <div>
-      Todos page
+      <Header />
+      <AddTodo />
+      <ListTodos />
     </div>
   );
 }

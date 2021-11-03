@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
-import userContext from '../context/userContext';
 
 function Login() {
-  const { userData } = useContext(userContext);
+  const user = useSelector((state) => state.user);
 
-  if (userData && userData.userId) return <Redirect to="/" />;
+  if (user && user.userId) return <Redirect to="/" />;
 
   return (
     <>
