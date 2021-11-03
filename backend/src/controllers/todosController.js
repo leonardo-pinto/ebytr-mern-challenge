@@ -21,8 +21,9 @@ const exclude = async (req, res, next) => {
   res.status(204).send();
 };
 
-const getAll = async (_req, res, _next) => {
-  const todos = await todosService.getAll();
+const getAll = async (req, res, _next) => {
+  const { userId } = req.user;
+  const todos = await todosService.getAll(userId);
 
   return res.status(200).json(todos);
 };
