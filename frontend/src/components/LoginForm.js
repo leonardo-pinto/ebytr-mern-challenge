@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { login } from '../services/todosServices';
 
 function LoginForm() {
@@ -16,17 +17,10 @@ function LoginForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    console.log('handleSubmit');
-    e.preventDefault();
-    login(email, password);
-    console.log('pós handleSubmit');
-  };
-
   useEffect(() => {
     const format = /\S+@\S+\.\S+/;
-    const minPassword = 6;
-    if (password.length > minPassword && email.match(format)) {
+    const minPasswordLength = 6;
+    if (password.length > minPasswordLength && email.match(format)) {
       setDisableLoginBtn(false);
     } else {
       setDisableLoginBtn(true);
@@ -34,10 +28,7 @@ function LoginForm() {
   }, [email, password]);
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={ handleSubmit }
-    >
+    <form>
       <label htmlFor="email">
         <input
           name="email"
@@ -66,6 +57,10 @@ function LoginForm() {
       >
         Login
       </button>
+      <div>
+        <p>Don&apos;t have an account?</p>
+        <Link to="/signup">Sign Up now!</Link>
+      </div>
     </form>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 // import Header from '../components/Header';
-import LoginForm from '../components/LoginForm';
+import SignupForm from '../components/SignupForm';
 import userContext from '../context/userContext';
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
   return (
     <>
       {/* <Header /> */}
-      <LoginForm />
+      <SignupForm />
     </>
   );
 }
