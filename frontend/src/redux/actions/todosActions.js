@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import { apiUrl, setHeaders } from '../../services/todosServices';
 
@@ -24,6 +23,19 @@ export const addTodo = (todo) => async (dispatch) => {
       todo: response,
     });
   } catch (err) {
-    console.log(err);
+    console.log(err.response);
+  }
+};
+
+export const deleteTodo = (todoId) => async (dispatch) => {
+  try {
+    await axios.delete(`${apiUrl}/todos/${todoId}`, setHeaders());
+
+    dispatch({
+      type: 'DELETE_TODO',
+      todoId,
+    });
+  } catch (err) {
+    console.log(err.response);
   }
 };

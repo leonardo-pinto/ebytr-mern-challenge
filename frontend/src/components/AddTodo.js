@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/actions/todosActions';
+import { AddIcon } from '../services/todosIcons';
 
 function AddTodo() {
   const [todo, setTodo] = useState('');
@@ -30,7 +31,7 @@ function AddTodo() {
         data-testid="add-todo-btn"
         onClick={ () => handleAddTodoClick() }
       >
-        Add Todo!
+        {AddIcon()}
       </button>
     </div>
   );

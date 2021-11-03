@@ -6,6 +6,10 @@ const todosReducer = (state = initialState, action) => {
     return action.todo.data;
   case 'ADD_TODO':
     return [...state, action.todo.data];
+  case 'DELETE_TODO': {
+    return state.filter(({ _id }) => _id !== action.todoId);
+  }
+
   default:
     return state;
   }
