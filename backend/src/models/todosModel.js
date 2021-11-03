@@ -9,7 +9,7 @@ const dbConnection = async () => {
 
 const create = async (userId, todo, status, createdAt) => {
   const db = await dbConnection();
-  
+
   const { insertedId: id } = await db.insertOne({ userId, todo, status, createdAt });
   
   return { id: ObjectId(id), userId, todo, status, createdAt };
@@ -32,9 +32,9 @@ const exclude = async (todoId) => {
   return true;
 };
 
-const getAll = async () => {
+const getAll = async (userId) => {
   const db = await dbConnection();
-  const todos = await db.find().toArray();
+  const todos = await db.find({ userId }).toArray();
 
   return todos;
 };
