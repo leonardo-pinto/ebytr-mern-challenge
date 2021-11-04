@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { signUp } from '../redux/actions/userActions';
-import { todoIcon } from '../services/todosIcons';
+import { signUp } from '../../redux/actions/userActions';
+import { todoIcon } from '../../services/todosIcons';
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -36,7 +36,6 @@ function SignupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handleSubmit');
     dispatch(signUp(name, email, password));
   };
 

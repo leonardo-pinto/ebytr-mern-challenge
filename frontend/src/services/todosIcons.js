@@ -1,32 +1,10 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 
-export function TodoIcon() {
-  return (
-    <svg
-      data-testid="logo"
-      className="w-16 h-16 p-1"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={ 2 }
-        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0
-        00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2
-        2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-      />
-    </svg>
-  );
-}
-
 export function AddIcon() {
   return (
     <svg
-      data-testid="addIcon"
+      data-testid="add-icon"
       className="w-6 h-6"
       fill="none"
       stroke="currentColor"
@@ -46,6 +24,7 @@ export function AddIcon() {
 export function DeleteIcon() {
   return (
     <svg
+      data-testid="delete-icon"
       className="w-10 h-10 p-2"
       fill="none"
       stroke="currentColor"
@@ -66,6 +45,7 @@ export function DeleteIcon() {
 export function EditIcon() {
   return (
     <svg
+      data-testid="edit-icon"
       className="w-10 h-10 p-2"
       fill="none"
       stroke="currentColor"
@@ -86,6 +66,7 @@ export function EditIcon() {
 export function CancelEditIcon() {
   return (
     <svg
+      data-testid="cancel-edit-icon"
       className="w-10 h-10 p-2"
       fill="none"
       stroke="currentColor"
@@ -105,6 +86,7 @@ export function CancelEditIcon() {
 export function ConfirmEditIcon() {
   return (
     <svg
+      data-testid="confirm-edit-icon"
       className="w-10 h-10 p-2"
       fill="none"
       stroke="currentColor"
@@ -124,6 +106,7 @@ export function ConfirmEditIcon() {
 export function SortDesIcon() {
   return (
     <svg
+      data-testid="sort-des-icon"
       className="w-6 h-6"
       fill="none"
       stroke="currentColor"
@@ -145,6 +128,7 @@ export function SortDesIcon() {
 export function SortAscIcon() {
   return (
     <svg
+      data-testid="sort-asc-icon"
       className="w-6 h-6"
       fill="none"
       stroke="currentColor"
@@ -166,6 +150,7 @@ export function SortAscIcon() {
 export function todoIcon() {
   return (
     <svg
+      data-testid="todo-icon"
       className="w-16 h-16 p-1"
       fill="none"
       stroke="currentColor"
@@ -189,6 +174,7 @@ export function todoIcon() {
 export function signOutIcon() {
   return (
     <svg
+      data-testid="signout-icon"
       className="w-6 h-6"
       fill="none"
       stroke="currentColor"

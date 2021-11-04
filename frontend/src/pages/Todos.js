@@ -2,10 +2,10 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import Header from '../components/Header';
-import AddTodo from '../components/AddTodo';
-import SortBarTodos from '../components/SortBarTodos';
-import ListTodos from '../components/ListTodos';
+import Header from '../components/header/Header';
+import AddTodo from '../components/todos/AddTodo';
+import SortBarTodos from '../components/todos/SortBarTodos';
+import ListTodos from '../components/todos/ListTodos';
 
 function Todos() {
   const user = useSelector((state) => state.user);

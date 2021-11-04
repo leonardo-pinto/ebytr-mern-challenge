@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import {
   SortAscIcon,
   SortDesIcon,
-} from '../services/todosIcons';
-import { sortTodos } from '../redux/actions/todosActions';
+} from '../../services/todosIcons';
+import { sortTodos } from '../../redux/actions/todosActions';
 
 function SortBarTodos() {
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ function SortBarTodos() {
     <div className="flex p-2 justify-center items-center">
       <p>Sort by:</p>
       <select
+        data-testid="select-parameter"
         className="bg-white rounded-lg p-1 m-4 border
         border-transparent focus:ring-2 focus:ring-blue-600"
         name="parameter"

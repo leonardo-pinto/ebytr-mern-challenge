@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/login/LoginForm';
 
 function Login() {
   const user = useSelector((state) => state.user);

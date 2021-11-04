@@ -2,8 +2,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signOut } from '../redux/actions/userActions';
-import { todoIcon, signOutIcon } from '../services/todosIcons';
+import { signOut } from '../../redux/actions/userActions';
+import { todoIcon, signOutIcon } from '../../services/todosIcons';
 
 function Header() {
   const dispatch = useDispatch();

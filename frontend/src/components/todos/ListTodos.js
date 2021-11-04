@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTodos } from '../redux/actions/todosActions';
-import { getSortedTodos } from '../services/todosServices';
+import { getTodos } from '../../redux/actions/todosActions';
+import { getSortedTodos } from '../../services/todosServices';
 import Todo from './Todo';
 
 function ListTodos() {
