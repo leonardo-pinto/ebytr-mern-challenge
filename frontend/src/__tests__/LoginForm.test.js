@@ -1,10 +1,14 @@
 import React from 'react';
+import axios from 'axios';
 import '@testing-library/jest-dom';
 import {
   screen, fireEvent,
 } from '@testing-library/react';
+import { apiUrl } from '../services/todosServices';
 import LoginForm from '../components/login/LoginForm';
 import { renderWithRouterAndRedux } from '../services/renderWithRouterAndRedux';
+
+require('dotenv').config();
 
 const initialState = {
   user: {
@@ -64,5 +68,34 @@ describe('LoginForm component', () => {
     fireEvent.change(password, { target: { value: '123456789' } });
 
     expect(loginBtn).not.toHaveAttribute('disabled');
+  });
+
+  it('if login credentials are valid, the correct endpoint is called', async () => {
+    const response = {
+      data: {
+        token: process.env.TEST_TOKEN,
+      },
+    };
+
+    renderWithRouterAndRedux(
+      <LoginForm />, { route: '/login' }, initialState,
+    );
+
+    const emailInput = screen.getByTestId(emailInputId);
+    const passwordInput = screen.getByTestId(passwordInputId);
+    const loginBtn = screen.getByTestId(loginBtnId);
+
+    fireEvent.change(emailInput, { target: { value: process.env.TEST_EMAIL } });
+    fireEvent.change(passwordInput, { target: { value: process.env.TEST_PASSWORD } });
+
+    axios.post.mockResolvedValueOnce(response);
+
+    fireEvent.click(loginBtn);
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    expect(axios.post)
+      .toHaveBeenCalledWith(`${apiUrl}/login`, { email, password });
   });
 });
