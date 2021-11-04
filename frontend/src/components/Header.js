@@ -3,6 +3,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../redux/actions/userActions';
+import { todoIcon, signOutIcon } from '../services/todosIcons';
 
 function Header() {
   const dispatch = useDispatch();
@@ -15,35 +16,27 @@ function Header() {
   if (!user.userId) return <Redirect to="/login" />;
 
   return (
-    <header>
-      <h1>App name</h1>
-      { user && <p>
-        {`Hello, ${user.name}`}
-      </p>}
-      <span>
-        <p>Sign Out</p>
-        <button
-          type="button"
-          data-testid="signout-btn"
-          onClick={ () => handleSignOut() }
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+    <header className="flex-col">
+      <div className="flex justify-between items-center my-1">
+        { user && <p>
+          {`Hello, ${user.name}`}
+        </p>}
+        <span className="flex justify-center items-center">
+          <p>Sign Out</p>
+          <button
+            className="m-1"
+            type="button"
+            data-testid="signout-btn"
+            onClick={ () => handleSignOut() }
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={ 2 }
-              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0
-              01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-            />
-          </svg>
-        </button>
-      </span>
+            {signOutIcon()}
+          </button>
+        </span>
+      </div>
+      <div className="flex justify-center items-center p-4 my-1">
+        {todoIcon()}
+        <h1 className="text-2xl">EBYRT To Do List</h1>
+      </div>
     </header>
   );
 }
