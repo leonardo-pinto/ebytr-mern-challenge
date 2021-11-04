@@ -14,7 +14,7 @@ const validateJWT = async (req, _res, next) => {
     req.user = { userId, email, name };
     next();
   } catch (err) {
-    return next({ code: 'jwtMalformed', message: 'jwt malformed' });
+    return next({ code: 'jwtMalformed', message: 'token is expired. please login again' });
   }
 };
 

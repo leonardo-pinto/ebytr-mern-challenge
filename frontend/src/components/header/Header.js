@@ -35,7 +35,7 @@ function Header() {
       </div>
       <div className="flex justify-center items-center p-4 my-1">
         {todoIcon()}
-        <h1 className="text-2xl">EBYRT To Do List</h1>
+        <h1 className="text-2xl">Ebytr To Do List</h1>
       </div>
     </header>
   );

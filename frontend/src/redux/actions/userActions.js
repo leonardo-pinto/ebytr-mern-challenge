@@ -15,7 +15,6 @@ export const userLogin = (email, password) => async (dispatch) => {
     const response = await axios.post(`${apiUrl}/login`, { email, password });
 
     localStorage.setItem('token', response.data.token);
-    console.log(localStorage.getItem('token'));
     dispatch({
       type: 'LOGIN',
       token: response.data.token,
@@ -30,10 +29,13 @@ export const userLogin = (email, password) => async (dispatch) => {
 
 export const signUp = (name, email, password) => async (dispatch) => {
   try {
-    await axios.post(`${apiUrl}/signup`, { name, email, password });
+    const response = await axios.post(`${apiUrl}/signup`, { name, email, password });
 
     dispatch({
       type: 'SIGNUP',
+    });
+    toast.success(response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
     });
   } catch (err) {
     console.log(err.response);

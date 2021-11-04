@@ -9,7 +9,7 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-  case 'SIGNUP':
+  case 'SIGNUP': return state;
   case 'LOAD_USER':
   case 'LOGIN': {
     const loggedUser = jwtDecode(action.token);
