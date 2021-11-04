@@ -1,10 +1,8 @@
 import React from 'react';
-// import axios from 'axios';
 import '@testing-library/jest-dom';
 import {
   screen, fireEvent,
 } from '@testing-library/react';
-// import { apiUrl } from '../services/todosServices';
 import LoginForm from '../components/login/LoginForm';
 import { renderWithRouterAndRedux } from '../services/renderWithRouterAndRedux';
 
@@ -67,32 +65,4 @@ describe('LoginForm component', () => {
 
     expect(loginBtn).not.toHaveAttribute('disabled');
   });
-
-  // it('if login credentials are valid, it saves a token in local storage', async () => {
-  //   const response = {
-  //     data: {
-  //       token: '507f1f77bcf86cd799439011',
-  //     },
-  //   };
-
-  //   const { store } = renderWithRouterAndRedux(
-  //     <LoginForm />, { route: '/login' }, initialState,
-  //   );
-
-  //   const emailInput = screen.getByTestId(emailInputId);
-  //   const passwordInput = screen.getByTestId(passwordInputId);
-  //   const loginBtn = screen.getByTestId(loginBtnId);
-
-  //   fireEvent.change(emailInput, { target: { value: 'createuser@email.com' } });
-  //   fireEvent.change(passwordInput, { target: { value: '123456789' } });
-
-  //   axios.post.mockResolvedValueOnce(response);
-
-  //   fireEvent.click(loginBtn);
-
-  //   const email = emailInput.value;
-  //   const password = passwordInput.value;
-
-  //   expect(axios.post).toHaveBeenCalledWith(`${apiUrl}/login`, { email, password });
-  // });
 });

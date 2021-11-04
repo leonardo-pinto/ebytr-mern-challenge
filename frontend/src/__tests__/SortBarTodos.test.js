@@ -1,19 +1,16 @@
 import React from 'react';
-// import axios from 'axios';
 import '@testing-library/jest-dom';
-import {
-  screen, fireEvent,
-} from '@testing-library/react';
-// import { apiUrl } from '../services/todosServices';
+import { screen } from '@testing-library/react';
 import SortBarTodos from '../components/todos/SortBarTodos';
 import { renderWithRouterAndRedux } from '../services/renderWithRouterAndRedux';
 
 const initialState = {
-  user: {
-    name: null,
-    email: null,
-    userId: null,
-    token: null,
+  todos: {
+    todos: [],
+    sort: {
+      parameter: 'createdAt',
+      order: 'asc',
+    },
   },
 };
 
@@ -43,18 +40,4 @@ describe('SortBarTodos component', () => {
     expect(sortAscIcon).toBeInTheDocument();
     expect(sortDesIcon).toBeInTheDocument();
   });
-
-  // it('store is updated after clicking on the desc sort button', () => {
-  //   const { store } = renderWithRouterAndRedux(
-  //     <SortBarTodos />, { route: '/' }, initialState,
-  //   );
-
-  //   expect(store.getState().user.order).toBe('asc');
-
-  //   const sortDesBtn = screen.getByTestId(sortDesBtnId);
-
-  //   fireEvent.click(sortDesBtn);
-
-  //   expect(store.getState().user.order).toBe('des');
-  // });
 });

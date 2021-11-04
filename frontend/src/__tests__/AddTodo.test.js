@@ -9,11 +9,12 @@ import AddTodo from '../components/todos/AddTodo';
 import { renderWithRouterAndRedux } from '../services/renderWithRouterAndRedux';
 
 const initialState = {
-  user: {
-    name: null,
-    email: null,
-    userId: null,
-    token: null,
+  todos: {
+    todos: [],
+    sort: {
+      parameter: 'createdAt',
+      order: 'asc',
+    },
   },
 };
 

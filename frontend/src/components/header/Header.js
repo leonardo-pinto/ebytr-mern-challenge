@@ -18,7 +18,7 @@ function Header() {
   return (
     <header className="flex-col">
       <div className="flex justify-between items-center my-1">
-        { user && <p>
+        { user && <p data-testid="username-text">
           {`Hello, ${user.name}`}
         </p>}
         <span className="flex justify-center items-center">
@@ -35,7 +35,7 @@ function Header() {
       </div>
       <div className="flex justify-center items-center p-4 my-1">
         {todoIcon()}
-        <h1 className="text-2xl">Ebytr To Do List</h1>
+        <h1 data-testid="title" className="text-2xl">Ebytr To Do List</h1>
       </div>
     </header>
   );
