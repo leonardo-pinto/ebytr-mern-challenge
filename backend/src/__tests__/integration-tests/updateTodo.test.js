@@ -93,14 +93,14 @@ describe('/PUT /todos/:todoId', () => {
         })
         .then((res) => res.body.token);
 
-      const { id, createdAt } = await chai.request(server)
+      const { _id, createdAt } = await chai.request(server)
         .post('/todos')
         .send({ todo: todoExample })
         .set('authorization', token)
         .then((res) => res.body);
 
       response = await chai.request(server)
-        .put(`/todos/${id}`)
+        .put(`/todos/${_id}`)
         .send({ 
           todo: 'edited todo',
           status: 'pending',
