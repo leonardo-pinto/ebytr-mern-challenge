@@ -15,17 +15,19 @@ function AddTodo() {
   };
 
   return (
-    <div>
-      <label htmlFor="todo">
-        <input
-          name="todo"
-          type="text"
-          placeholder="Add todo..."
-          data-testid="todo-input"
-          value={ todo }
-          onChange={ (e) => setTodo(e.target.value) }
-        />
-      </label>
+    <div
+      className="flex justify-center items-center my-1"
+    >
+      <input
+        name="todo"
+        className="w-3/4 py-2 px-3 m-2 rounded
+          focus:ring-2 focus:ring-blue-600 text-gray-700"
+        type="text"
+        placeholder="Add todo..."
+        data-testid="todo-input"
+        value={ todo }
+        onChange={ (e) => setTodo(e.target.value) }
+      />
       <button
         type="button"
         data-testid="add-todo-btn"

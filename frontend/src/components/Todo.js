@@ -48,61 +48,84 @@ function Todo(props) {
     <div>
       { !editTodoEnabled
         ? (
-          <div>
-            <p data-testid="todo-text">{todo}</p>
-            <p data-testid="todo-status">{`Status: ${status}`}</p>
-            <p data-testid="todo-createdat">{`Created at: ${createdAt}`}</p>
-            <button
-              type="button"
-              data-testid="delete-btn"
-              onClick={ () => handleDeleteTodoClick() }
-            >
-              {DeleteIcon()}
-            </button>
-            <button
-              type="button"
-              data-testid="edit-btn"
-              onClick={ () => handleEditTodoEnabled() }
-            >
-              {EditIcon()}
-            </button>
+          <div
+            className="flex flex-col justify-center
+            items-start bg-purple-100 mx-auto border-2
+            border-solid border-black rounded-lg w-full"
+          >
+            <p className="p-1" data-testid="todo-text">
+              {`Task: ${todo}`}
+            </p>
+            <p className="p-1" data-testid="todo-status">
+              {`Status: ${status}`}
+            </p>
+            <p className="p-1" data-testid="todo-createdat">
+              {`Created at: ${createdAt}`}
+            </p>
+            <div>
+              <button
+                type="button"
+                data-testid="delete-btn"
+                onClick={ () => handleDeleteTodoClick() }
+              >
+                {DeleteIcon()}
+              </button>
+              <button
+                type="button"
+                data-testid="edit-btn"
+                onClick={ () => handleEditTodoEnabled() }
+              >
+                {EditIcon()}
+              </button>
+            </div>
           </div>
         )
         : (
-          <div>
-            <label htmlFor="editTodoText">
+          <div
+            className="flex flex-col justify-center
+            items-start bg-purple-100 mx-auto border-2
+            border-solid border-black rounded-lg p-4"
+          >
+            <div className="flex justify-start items-center">
+              <p className="p-1">Task:</p>
               <input
                 data-testid="edit-todo-text-input"
+                className="py-2 px-3 m-2 rounded
+                focus:ring-2 focus:ring-blue-600 text-gray-700"
                 type="text"
                 name="todo"
                 value={ editedTodo.todo }
                 onChange={ handleEditedTodo }
               />
-            </label>
-            <label htmlFor="status-select">
+            </div>
+            <div className="flex justify-start items-center">
+              <p className="p-1">Status:</p>
               <select
                 name="status"
+                className="bg-white rounded-lg py-2 px-3 m-2 border
+                border-transparent focus:ring-2 focus:ring-blue-600"
                 onChange={ handleEditedTodo }
               >
                 <option value="Pending">Pending</option>
                 <option value="In progress">In progress</option>
                 <option value="Done">Done</option>
               </select>
-            </label>
-            <button
-              data-testid="confirm-edit-todo-btn"
-              type="button"
-              onClick={ () => handleConfirmEditButtonClick() }
-            >
-              {ConfirmEditIcon()}
-            </button>
-            <button
-              data-testid="cancel-edit-todo-btn"
-              type="button"
-              onClick={ () => handleEditTodoEnabled() }
-            >
-              {CancelEditIcon()}
-            </button>
+              <button
+                className="m-4"
+                data-testid="confirm-edit-todo-btn"
+                type="button"
+                onClick={ () => handleConfirmEditButtonClick() }
+              >
+                {ConfirmEditIcon()}
+              </button>
+              <button
+                data-testid="cancel-edit-todo-btn"
+                type="button"
+                onClick={ () => handleEditTodoEnabled() }
+              >
+                {CancelEditIcon()}
+              </button>
+            </div>
           </div>
         )}
     </div>

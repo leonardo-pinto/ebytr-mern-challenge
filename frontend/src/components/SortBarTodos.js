@@ -22,20 +22,21 @@ function SortBarTodos() {
   };
 
   return (
-    <div>
-      <label htmlFor="select-sort">
-        <p>Sort by:</p>
-        <select
-          id="select-sort"
-          name="parameter"
-          onChange={ handleSortParameter }
-        >
-          <option value="todo">Todo</option>
-          <option value="status">Status</option>
-          <option value="createdAt">Date</option>
-        </select>
-      </label>
+    <div className="flex p-2 justify-center items-center">
+      <p>Sort by:</p>
+      <select
+        className="bg-white rounded-lg p-1 m-4 border
+        border-transparent focus:ring-2 focus:ring-blue-600"
+        name="parameter"
+        onChange={ handleSortParameter }
+      >
+        <option value="todo">Todo</option>
+        <option value="status">Status</option>
+        <option value="createdAt">Date</option>
+      </select>
+
       <button
+        className="m-2"
         data-testid="sort-asc-btn"
         type="button"
         onClick={ () => handleSortOrder('asc') }
@@ -43,6 +44,7 @@ function SortBarTodos() {
         {SortAscIcon()}
       </button>
       <button
+        className="m-2"
         data-testid="sort-des-btn"
         type="button"
         onClick={ () => handleSortOrder('des') }

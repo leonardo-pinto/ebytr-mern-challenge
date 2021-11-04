@@ -13,7 +13,11 @@ function Todos() {
   if (!user.userId) return <Redirect to="/login" />;
 
   return (
-    <div>
+    <div
+      className="p-2 flex flex-col justify-center
+      items-center bg-purple-100 mx-auto border-2
+      border-solid border-black rounded-lg w-11/12 sm:w-2/4 md:w-8/12"
+    >
       <ToastContainer />
       <Header />
       <AddTodo />
