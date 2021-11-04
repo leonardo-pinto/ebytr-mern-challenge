@@ -26,6 +26,7 @@ export const addTodo = (todo) => async (dispatch) => {
       type: 'ADD_TODO',
       todo: response.data,
     });
+    console.log('pós dispatch');
   } catch (err) {
     console.log(err.response);
     toast.error(err.response.data.message, {
