@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// import Header from '../components/Header';
+import { ToastContainer } from 'react-toastify';
 import LoginForm from '../components/LoginForm';
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
 
   return (
     <>
-      {/* <Header /> */}
+      <ToastContainer />
       <LoginForm />
     </>
   );

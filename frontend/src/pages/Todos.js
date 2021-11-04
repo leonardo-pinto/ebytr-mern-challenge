@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import Header from '../components/Header';
 import AddTodo from '../components/AddTodo';
 import SortBarTodos from '../components/SortBarTodos';
@@ -13,6 +14,7 @@ function Todos() {
 
   return (
     <div>
+      <ToastContainer />
       <Header />
       <AddTodo />
       <SortBarTodos />

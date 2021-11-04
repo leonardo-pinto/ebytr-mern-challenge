@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { apiUrl } from '../../services/todosServices';
 
 export const signOut = () => (dispatch) => {
@@ -20,6 +21,9 @@ export const userLogin = (email, password) => async (dispatch) => {
     });
   } catch (err) {
     console.log(err.response);
+    toast.error(err.response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
 };
 
@@ -32,6 +36,9 @@ export const signUp = (name, email, password) => async (dispatch) => {
     });
   } catch (err) {
     console.log(err.response);
+    toast.error(err.response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
 };
 
