@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
 
 function Login() {
@@ -10,10 +9,7 @@ function Login() {
   if (user && user.userId) return <Redirect to="/" />;
 
   return (
-    <>
-      {/* <Header /> */}
-      <LoginForm />
-    </>
+    <LoginForm />
   );
 }
 

@@ -14,11 +14,13 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Switch>
-      <Route path="/login" component={ Login } />
-      <Route path="/signup" component={ Signup } />
-      <Route path="/" component={ Todos } />
-    </Switch>
+    <div className="flex items-center justify-center h-screen bg-purple-200">
+      <Switch>
+        <Route path="/login" component={ Login } />
+        <Route path="/signup" component={ Signup } />
+        <Route path="/" component={ Todos } />
+      </Switch>
+    </div>
   );
 }
 
