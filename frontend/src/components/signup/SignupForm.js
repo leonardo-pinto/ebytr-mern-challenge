@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../redux/actions/userActions';
 import { todoIcon } from '../../services/todosIcons';
 
 function SignupForm() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [signupInput, setSignupInput] = useState({
     name: '',
@@ -37,6 +39,7 @@ function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signUp(name, email, password));
+    history.push('/login');
   };
 
   return (
@@ -47,7 +50,7 @@ function SignupForm() {
     >
       <div className="flex justify-center items-center p-4">
         {todoIcon()}
-        <h1 className="text-2xl">EBYRT To Do List</h1>
+        <h1 className="text-2xl">Ebytr To Do List</h1>
       </div>
       <form
         className="w-full flex flex-col justify-center items-center"

@@ -43,7 +43,7 @@ function LoginForm() {
     >
       <div className="flex justify-center items-center p-4">
         {todoIcon()}
-        <h1 className="text-2xl">EBYRT To Do List</h1>
+        <h1 className="text-2xl">Ebytr To Do List</h1>
       </div>
       <form
         className="w-full flex flex-col justify-center items-center"
