@@ -76,7 +76,7 @@ describe('SignupForm component', () => {
     expect(signupBtn).not.toHaveAttribute('disabled');
   });
 
-  it('if signup credentials are valid, the correct endpoint is called', async () => {
+  it('if signup credentials are valid, the correct endpoint is called', () => {
     const response = {
       data: {
         message: 'User created successfully!',

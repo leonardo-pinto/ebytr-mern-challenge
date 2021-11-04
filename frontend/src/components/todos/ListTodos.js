@@ -18,7 +18,7 @@ function ListTodos() {
     <div>
       { todos.length !== 0
         ? (
-          <div>
+          <div data-testid="todos-container">
             { todos.map((todo) => (
               <div key={ todo._id }>
                 <Todo todo={ todo } />
@@ -26,7 +26,7 @@ function ListTodos() {
             )) }
           </div>
         )
-        : <h1>No todos</h1> }
+        : <h1 data-testid="no-todos">No todos</h1> }
     </div>
   );
 }
