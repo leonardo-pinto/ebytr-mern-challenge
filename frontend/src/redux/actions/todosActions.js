@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { apiUrl, setHeaders } from '../../services/todosServices';
 
 export const getTodos = () => async (dispatch) => {
@@ -11,6 +12,9 @@ export const getTodos = () => async (dispatch) => {
     });
   } catch (err) {
     console.log(err.response);
+    toast.error(err.response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
 };
 
@@ -24,6 +28,9 @@ export const addTodo = (todo) => async (dispatch) => {
     });
   } catch (err) {
     console.log(err.response);
+    toast.error(err.response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
 };
 
@@ -36,6 +43,9 @@ export const deleteTodo = (_id) => async (dispatch) => {
     });
   } catch (err) {
     console.log(err.response);
+    toast.error(err.response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
 };
 
@@ -54,6 +64,9 @@ export const updateTodo = (editedTodo) => async (dispatch) => {
     });
   } catch (err) {
     console.log(err.response);
+    toast.error(err.response.data.message, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
 };
 
