@@ -33,7 +33,7 @@ function SortBarTodos() {
       >
         <option value="todo">Todo</option>
         <option value="status">Status</option>
-        <option value="createdAt">Date</option>
+        <option data-testid="created-at-option" value="createdAt">Date</option>
       </select>
 
       <button

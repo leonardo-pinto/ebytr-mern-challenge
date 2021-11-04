@@ -1,10 +1,10 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import '@testing-library/jest-dom';
 import {
   screen, fireEvent,
 } from '@testing-library/react';
-// import { apiUrl } from '../services/todosServices';
+import { apiUrl } from '../services/todosServices';
 import SignupForm from '../components/signup/SignupForm';
 import { renderWithRouterAndRedux } from '../services/renderWithRouterAndRedux';
 
@@ -43,7 +43,7 @@ describe('SignupForm component', () => {
 
   it('user is able to fill name, email and password inputs', () => {
     renderWithRouterAndRedux(
-      <SignupForm />, { route: '/login' }, initialState,
+      <SignupForm />, { route: '/signup' }, initialState,
     );
 
     const name = screen.getByTestId(nameInputId);
@@ -59,7 +59,7 @@ describe('SignupForm component', () => {
 
   it('signup button is enabled after valid name, email and password formats', () => {
     renderWithRouterAndRedux(
-      <SignupForm />, { route: '/login' }, initialState,
+      <SignupForm />, { route: '/signup' }, initialState,
     );
 
     const name = screen.getByTestId(nameInputId);
@@ -74,5 +74,37 @@ describe('SignupForm component', () => {
     fireEvent.change(password, { target: { value: '123456789' } });
 
     expect(signupBtn).not.toHaveAttribute('disabled');
+  });
+
+  it('if signup credentials are valid, the correct endpoint is called', () => {
+    const response = {
+      data: {
+        message: 'User created successfully!',
+      },
+    };
+
+    renderWithRouterAndRedux(
+      <SignupForm />, { route: '/signup' }, initialState,
+    );
+
+    const nameInput = screen.getByTestId(nameInputId);
+    const emailInput = screen.getByTestId(emailInputId);
+    const passwordInput = screen.getByTestId(passwordInputId);
+    const signupBtnInput = screen.getByTestId(signupBtnId);
+
+    fireEvent.change(nameInput, { target: { value: 'username' } });
+    fireEvent.change(emailInput, { target: { value: 'email@email.com' } });
+    fireEvent.change(passwordInput, { target: { value: '123456789' } });
+
+    axios.post.mockResolvedValueOnce(response);
+
+    fireEvent.click(signupBtnInput);
+
+    const name = nameInput.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    expect(axios.post)
+      .toHaveBeenCalledWith(`${apiUrl}/signup`, { name, email, password });
   });
 });

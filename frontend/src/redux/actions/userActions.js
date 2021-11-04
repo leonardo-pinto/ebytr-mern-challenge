@@ -13,12 +13,13 @@ export const signOut = () => (dispatch) => {
 export const userLogin = (email, password) => async (dispatch) => {
   try {
     const response = await axios.post(`${apiUrl}/login`, { email, password });
-
     localStorage.setItem('token', response.data.token);
     dispatch({
       type: 'LOGIN',
       token: response.data.token,
     });
+
+    return response;
   } catch (err) {
     console.log(err.response);
     toast.error(err.response.data.message, {
