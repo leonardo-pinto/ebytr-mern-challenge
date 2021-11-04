@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const sinon = require('sinon');
@@ -135,7 +136,7 @@ describe('/DELETE /todos/:todoId', () => {
         .post('/todos')
         .send({ todo: todoExample })
         .set('authorization', token)
-        .then((res) => res.body.id);
+        .then((res) => res.body._id);
 
       response = await chai.request(server)
         .delete(`/todos/${todoId}`)

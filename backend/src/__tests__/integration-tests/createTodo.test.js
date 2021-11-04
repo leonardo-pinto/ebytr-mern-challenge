@@ -99,8 +99,8 @@ describe('/POST /todos', () => {
       expect(response.body).to.have.property('message');
     });
   
-    it('"message" property has the text: "jst malformed"', () => {
-      expect(response.body.message).to.be.equal('jwt malformed');
+    it('"message" property has the text: "token is expired. please login again"', () => {
+      expect(response.body.message).to.be.equal('token is expired. please login again');
     });
   });
 
@@ -170,8 +170,8 @@ describe('/POST /todos', () => {
       expect(response.body).to.be.an('object');
     });
   
-    it('the object has the attributes: "id", "userId", "todo", "status", "createdAt"', () => {
-      expect(response.body).to.include.all.keys('id', 'userId', 'todo', 'status', 'createdAt');
+    it('the object has the attributes: "_id", "userId", "todo", "status", "createdAt"', () => {
+      expect(response.body).to.include.all.keys('_id', 'userId', 'todo', 'status', 'createdAt');
     });
   });
 });
