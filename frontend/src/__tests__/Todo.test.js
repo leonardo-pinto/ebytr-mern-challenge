@@ -1,11 +1,11 @@
 /* eslint-disable react-func/max-lines-per-function */
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import '@testing-library/jest-dom';
 import {
   screen, fireEvent, cleanup,
 } from '@testing-library/react';
-// import { apiUrl } from '../services/todosServices';
+import { apiUrl, setHeaders } from '../services/todosServices';
 import Todo from '../components/todos/Todo';
 import { renderWithRouterAndRedux } from '../services/renderWithRouterAndRedux';
 
@@ -20,6 +20,8 @@ const initialState = {
 };
 
 const todoExample = {
+  _id: 'todo id',
+  userId: 'user id',
   todo: 'test todo',
   status: 'done',
   createdAt: 'test createdAt',
@@ -110,5 +112,37 @@ describe('Todo component', () => {
 
     const originalTodoText = screen.getByTestId(todoTextId);
     expect(originalTodoText).toBeInTheDocument();
+  });
+
+  it('the correct endpoint is called after deleting a todo', () => {
+    localStorage.setItem('token', 'token example');
+
+    axios.delete.mockResolvedValueOnce();
+
+    const deleteTodoBtn = screen.getByTestId(deleteTodoBtnId);
+    fireEvent.click(deleteTodoBtn);
+
+    expect(axios.delete)
+      .toHaveBeenCalledWith(`${apiUrl}/todos/${todoExample._id}`, setHeaders());
+  });
+
+  it('the correct endpoint is called after updating a todo', () => {
+    localStorage.setItem('token', 'token example');
+
+    axios.put.mockResolvedValueOnce();
+
+    const editTodoBtn = screen.getByTestId(editTodoBtnId);
+    fireEvent.click(editTodoBtn);
+
+    const editTodoTextInput = screen.getByTestId(editTodoTextInputId);
+    const confirmEditBtn = screen.getByTestId(confirmEditBtnId);
+    fireEvent.change(editTodoTextInput, { target: { value: todoTextEditedExample } });
+    fireEvent.click(confirmEditBtn);
+
+    const { _id, status, createdAt } = todoExample;
+
+    expect(axios.put)
+      .toHaveBeenCalledWith(`${apiUrl}/todos/${_id}`,
+        { todo: todoTextEditedExample, status, createdAt }, setHeaders());
   });
 });
