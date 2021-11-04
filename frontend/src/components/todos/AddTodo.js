@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../redux/actions/todosActions';
-import { AddIcon } from '../services/todosIcons';
+import { addTodo } from '../../redux/actions/todosActions';
+import { AddIcon } from '../../services/todosIcons';
 
 function AddTodo() {
   const [todo, setTodo] = useState('');

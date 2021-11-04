@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { userLogin } from '../redux/actions/userActions';
-import { todoIcon } from '../services/todosIcons';
+import { userLogin } from '../../redux/actions/userActions';
+import { todoIcon } from '../../services/todosIcons';
 
 function LoginForm() {
   const dispatch = useDispatch();

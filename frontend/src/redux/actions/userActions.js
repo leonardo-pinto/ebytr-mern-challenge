@@ -13,8 +13,9 @@ export const signOut = () => (dispatch) => {
 export const userLogin = (email, password) => async (dispatch) => {
   try {
     const response = await axios.post(`${apiUrl}/login`, { email, password });
-    localStorage.setItem('token', response.data.token);
 
+    localStorage.setItem('token', response.data.token);
+    console.log(localStorage.getItem('token'));
     dispatch({
       type: 'LOGIN',
       token: response.data.token,

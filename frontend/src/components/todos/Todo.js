@@ -6,8 +6,8 @@ import {
   EditIcon,
   ConfirmEditIcon,
   CancelEditIcon,
-} from '../services/todosIcons';
-import { deleteTodo, updateTodo } from '../redux/actions/todosActions';
+} from '../../services/todosIcons';
+import { deleteTodo, updateTodo } from '../../redux/actions/todosActions';
 
 function Todo(props) {
   const { todo: { todo, status, createdAt, _id } } = props;
@@ -101,6 +101,7 @@ function Todo(props) {
             <div className="flex justify-start items-center">
               <p className="p-1">Status:</p>
               <select
+                data-testid="edit-status-select"
                 name="status"
                 className="bg-white rounded-lg py-2 px-3 m-2 border
                 border-transparent focus:ring-2 focus:ring-blue-600"
