@@ -35,6 +35,7 @@ function SignupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('handleSubmit');
     dispatch(signUp(name, email, password));
   };
 
@@ -73,7 +74,7 @@ function SignupForm() {
         />
       </label>
       <button
-        type="button"
+        type="submit"
         data-testid="button-signup"
         disabled={ disableSignupBtn }
       >

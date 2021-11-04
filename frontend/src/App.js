@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
 import { loadUser } from './redux/actions/userActions';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
