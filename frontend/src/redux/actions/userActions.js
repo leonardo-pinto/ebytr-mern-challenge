@@ -19,6 +19,8 @@ export const userLogin = (email, password) => async (dispatch) => {
       type: 'LOGIN',
       token: response.data.token,
     });
+
+    return response;
   } catch (err) {
     console.log(err.response);
     toast.error(err.response.data.message, {

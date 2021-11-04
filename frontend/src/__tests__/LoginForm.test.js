@@ -75,7 +75,7 @@ describe('LoginForm component', () => {
   //     },
   //   };
 
-  //   renderWithRouterAndRedux(
+  //   const { store } = renderWithRouterAndRedux(
   //     <LoginForm />, { route: '/login' }, initialState,
   //   );
 
@@ -83,15 +83,15 @@ describe('LoginForm component', () => {
   //   const passwordInput = screen.getByTestId(passwordInputId);
   //   const loginBtn = screen.getByTestId(loginBtnId);
 
-  //   fireEvent.change(emailInput, { target: { value: 'email@email.com' } });
+  //   fireEvent.change(emailInput, { target: { value: 'createuser@email.com' } });
   //   fireEvent.change(passwordInput, { target: { value: '123456789' } });
 
   //   axios.post.mockResolvedValueOnce(response);
 
   //   fireEvent.click(loginBtn);
 
-  //   const email = await emailInput.value;
-  //   const password = await passwordInput.value;
+  //   const email = emailInput.value;
+  //   const password = passwordInput.value;
 
   //   expect(axios.post).toHaveBeenCalledWith(`${apiUrl}/login`, { email, password });
   // });
