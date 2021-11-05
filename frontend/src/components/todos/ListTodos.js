@@ -1,3 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/jsx-curly-newline */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +29,10 @@ function ListTodos() {
             )) }
           </div>
         )
-        : <h1 data-testid="no-todos">No todos</h1> }
+        : <h1 data-testid="no-todos" className="p-4 text-lg">
+            No todos
+          </h1>
+      }
     </div>
   );
 }

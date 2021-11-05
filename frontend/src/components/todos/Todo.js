@@ -49,20 +49,22 @@ function Todo(props) {
       { !editTodoEnabled
         ? (
           <div
-            className="flex flex-col justify-center
-            items-start bg-purple-100 mx-auto border-2
-            border-solid border-black rounded-lg w-full"
+            className="flex justify-center
+            items-center bg-green-200 mx-auto my-1 sm:my-4 border-2
+            border-black rounded-lg w-full"
           >
-            <p className="p-1" data-testid="todo-text">
-              {`Task: ${todo}`}
-            </p>
-            <p className="p-1" data-testid="todo-status">
-              {`Status: ${status}`}
-            </p>
-            <p className="p-1" data-testid="todo-createdat">
-              {`Created at: ${createdAt}`}
-            </p>
             <div>
+              <p className="p-1" data-testid="todo-text">
+                {`Task: ${todo}`}
+              </p>
+              <p className="p-1" data-testid="todo-status">
+                {`Status: ${status}`}
+              </p>
+              <p className="text-sm p-1" data-testid="todo-createdat">
+                {`Created at: ${createdAt}`}
+              </p>
+            </div>
+            <div className="flex flex-col justify-center items-center m-4">
               <button
                 type="button"
                 data-testid="delete-btn"
@@ -83,28 +85,28 @@ function Todo(props) {
         : (
           <div
             className="flex flex-col justify-center
-            items-start bg-purple-100 mx-auto border-2
-            border-solid border-black rounded-lg p-4"
+            items-center bg-green-200 mx-auto my-1 sm:my-4 border-2
+            border-black rounded-lg w-full"
           >
-            <div className="flex justify-start items-center">
+            <div className="flex justify-center items-center">
               <p className="p-1">Task:</p>
               <input
                 data-testid="edit-todo-text-input"
-                className="py-2 px-3 m-2 rounded
-                focus:ring-2 focus:ring-blue-600 text-gray-700"
+                className="w-3/4 py-0.5 sm:py-2 px-3 m-1 sm:m-2 rounded focus:ring-2
+                focus:ring-black text-black"
                 type="text"
                 name="todo"
                 value={ editedTodo.todo }
                 onChange={ handleEditedTodo }
               />
             </div>
-            <div className="flex justify-start items-center">
+            <div className="flex justify-center items-center">
               <p className="p-1">Status:</p>
               <select
                 data-testid="edit-status-select"
                 name="status"
-                className="bg-white rounded-lg py-2 px-3 m-2 border
-                border-transparent focus:ring-2 focus:ring-blue-600"
+                className="bg-white rounded p-0.5 m-0.5 sm:m-4 border
+                focus:ring-2 focus:ring-black"
                 onChange={ handleEditedTodo }
               >
                 <option value="Pending">Pending</option>
@@ -112,7 +114,7 @@ function Todo(props) {
                 <option value="Done">Done</option>
               </select>
               <button
-                className="m-4"
+                className="m-0 sm:m-2"
                 data-testid="confirm-edit-todo-btn"
                 type="button"
                 onClick={ () => handleConfirmEditButtonClick() }

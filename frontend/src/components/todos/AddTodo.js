@@ -16,12 +16,12 @@ function AddTodo() {
 
   return (
     <div
-      className="flex justify-center items-center my-1"
+      className="flex justify-center items-center m-2 p-2"
     >
       <input
         name="todo"
-        className="w-3/4 py-2 px-3 m-2 rounded
-          focus:ring-2 focus:ring-blue-600 text-gray-700"
+        className="w-3/4 py-0.5 sm:py-2 px-3 m-1 sm:m-2 rounded
+          focus:ring-2 focus:ring-black text-black"
         type="text"
         placeholder="Add todo..."
         data-testid="todo-input"

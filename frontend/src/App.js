@@ -15,7 +15,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-purple-200">
+    <div className="">
       <Switch>
         <Route path="/login" component={ Login } />
         <Route path="/signup" component={ Signup } />

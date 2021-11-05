@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import LoginForm from '../components/login/LoginForm';
+import Title from '../components/title/Title';
 
 function Login() {
   const user = useSelector((state) => state.user);
@@ -11,6 +12,7 @@ function Login() {
 
   return (
     <>
+      <Title />
       <ToastContainer />
       <LoginForm />
     </>

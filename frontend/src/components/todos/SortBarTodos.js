@@ -22,12 +22,12 @@ function SortBarTodos() {
   };
 
   return (
-    <div className="flex p-2 justify-center items-center">
-      <p>Sort by:</p>
+    <div className="flex justify-center sm:p-2 justify-center items-center">
+      <p className="font-medium text-lg sm:text-xl">Sort by:</p>
       <select
         data-testid="select-parameter"
-        className="bg-white rounded-lg p-1 m-4 border
-        border-transparent focus:ring-2 focus:ring-blue-600"
+        className="bg-white rounded p-1 m-2 sm:m-4 border
+        focus:ring-2 focus:ring-black"
         name="parameter"
         onChange={ handleSortParameter }
       >
@@ -35,9 +35,8 @@ function SortBarTodos() {
         <option value="status">Status</option>
         <option data-testid="created-at-option" value="createdAt">Date</option>
       </select>
-
       <button
-        className="m-2"
+        className="m-1 sm:m-2"
         data-testid="sort-asc-btn"
         type="button"
         onClick={ () => handleSortOrder('asc') }
