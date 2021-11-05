@@ -12,7 +12,7 @@ Esse projeto consiste na resolução do desafio técnico proposto no processo se
 
 ---
 
-## Desenvolvimento
+## Desenvolvimento <a name="desenvolvimento></a>
 
 Foi desenvolvida uma aplicação full-stack de lista de tarefas. O back-end foi construído com a arquitetura MSC (model, service and controller) utilizando NodeJs, MongoDB e Express, enquanto que o front-end foi desenvolvido utilizando React. Tal combinação de frameworks é denominado de MERN, e sua escolha foi devido ao requisito do desafio técnico.
 
@@ -20,27 +20,26 @@ A aplicação consiste em uma lista de tarefas, no qual o usuário pode criar, d
 
 ---
 
-## Principais frameworks e bibliotecas utilizadas
+## Principais frameworks e bibliotecas utilizadas <a name="principais-frameworks-e-bibliotecas></a>
 
-* [MongoDB] (https://www.mongodb.com/)
-* [Express] (https://expressjs.com/)
-* [NodeJS] (https://nodejs.org/en/)
-* [Mocha] (https://mochajs.org/)
-* [Chai] (https://www.chaijs.com/)
-* [Joi] (https://joi.dev/api/?v=17.4.2)
-* [Jsonwebtoken] (https://www.npmjs.com/package/jsonwebtoken)
+<a href="https://www.mongodb.com/">MongoDB</a>
+<a href="https://expressjs.com/">Express</a>
+<a href="https://nodejs.org/en/">NodeJS</a>
+<a href="https://mochajs.org/">Mocha</a>
+<a href="https://www.chaijs.com/">Chai</a>
+<a href="https://joi.dev/api/?v=17.4.2">Joi</a>
+<a href="https://www.npmjs.com/package/jsonwebtoken">Jsonwebtoken</a>
 
-
-* [React] (https://reactjs.org/)
-* [Redux] (https://redux.js.org/)
-* [Tailwind CSS] (https://tailwindcss.com/)
-* [Toastify] (https://fkhadra.github.io/react-toastify/introduction)
-* [Jest] (https://jestjs.io/)
-* [React Testing Library] (https://testing-library.com/docs/react-testing-library/intro/)
+<a href="https://reactjs.org/">React</a>
+<a href="https://redux.js.org/">Redux</a>
+<a href="https://tailwindcss.com/">Tailwind CSS</a>
+<a href="https://fkhadra.github.io/react-toastify/introduction">Toastify</a>
+<a href="https://jestjs.io//">Jest</a>
+<a href="https://testing-library.com/docs/react-testing-library/intro">React Testing Library</a>
 
 ---
 
-## Instruções para executar o projeto localmente
+## Instruções para executar o projeto localmente <a name="instruções-para-executar-o-projeto-localmente"></a>
 
 ```bash
 # Clone este repositório
