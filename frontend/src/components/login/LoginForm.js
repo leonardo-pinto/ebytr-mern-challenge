@@ -66,7 +66,7 @@ function LoginForm() {
         />
         <button
           type="submit"
-          className="bg-black hover:bg-blue-700 text-white
+          className="bg-black text-white
           font-bold py-2 px-4 rounded-full m-3 sm:text-xl"
           data-testid="button-login"
           disabled={ disableLoginBtn }
