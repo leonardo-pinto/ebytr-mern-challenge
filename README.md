@@ -1,42 +1,45 @@
-# Boas vindas ao repositório Ebytr To Do !
+<h1> Boas vindas ao repositório do projeto Ebytr To Do ! </h1>
 
-Esse projeto consiste na resolução do desafio técnico proposto no processo seletivo da Ebytr para a vaga de pessoa desenvolvedora jr.
-
----
-
-## Desenvolvimento
-
-Foi desenvolvida uma aplicação full-stack de lista de tarefas. O back-end foi construído com a arquitetura MSC (model, service e controller) utilizando NodeJs, MongoDB e Express, enquanto que o front-end foi desenvolvido utilizando React. Tal combinação de frameworks é denominado de MERN, e sua escolha foi devido ao requisito do desafio técnico.
-
-A aplicação consiste em uma lista de tarefas, no qual o usuário pode criar, deletar e editar uma tarefa. O usuário também pode ordenar as tarefas criadas pelos campos de tarefa, status e data de criação. Além disso, a aplicação também possui uma área de login e cadastro de usuários.
+<p align=center>Esse projeto consiste na resolução do desafio técnico proposto no processo seletivo da Ebytr para a vaga de pessoa desenvolvedora jr.</p>
 
 ---
 
-## Principais frameworks e bibliotecas utilizadas
+<h2> Desenvolvimento </h2>
 
-#### Back-end
-* <a href="https://www.mongodb.com/">MongoDB</a>
-* <a href="https://expressjs.com/">Express</a>
-* <a href="https://nodejs.org/en/">NodeJS</a>
-* <a href="https://mochajs.org/">Mocha</a>
-* <a href="https://www.chaijs.com/">Chai</a>
-* <a href="https://joi.dev/api/?v=17.4.2">Joi</a>
-* <a href="https://www.npmjs.com/package/jsonwebtoken">Jsonwebtoken</a>
+<p align=justify>Foi desenvolvida uma aplicação full-stack de lista de tarefas. O back-end foi construído com a arquitetura MSC (model, service e controller) utilizando NodeJs, MongoDB e Express, enquanto que o front-end foi desenvolvido utilizando React. Tal combinação de frameworks é denominado de MERN, e sua escolha foi devido ao requisito do desafio técnico.</p>
 
+<p align=justify>A aplicação consiste em uma lista de tarefas, no qual o usuário pode criar, deletar e editar uma tarefa. O usuário também pode ordenar as tarefas criadas pelos campos de tarefa, status e data de criação. Além disso, a aplicação também possui uma área de login e cadastro de usuários.</p>
 
-#### Front-end
-* <a href="https://reactjs.org/">React</a>
-* <a href="https://redux.js.org/">Redux</a>
-* <a href="https://tailwindcss.com/">Tailwind CSS</a>
-* <a href="https://fkhadra.github.io/react-toastify/introduction">Toastify</a>
-* <a href="https://jestjs.io//">Jest</a>
-* <a href="https://testing-library.com/docs/react-testing-library/intro">React Testing Library</a>
-
+![Ebytr To Do](images/example.png?raw=true)
 ---
 
-## Instruções para executar o projeto localmente
+<h2> Principais frameworks e bibliotecas utilizadas </h2>
 
-### Pré-requisitos
+<h3> Back-end </h3>
+<ul>
+  <li><a href="https://www.mongodb.com/">MongoDB</a></li>
+  <li><a href="https://expressjs.com/">Express</a></li>
+  <li><a href="https://nodejs.org/en/">NodeJS</a></li>
+  <li><a href="https://mochajs.org/">Mocha</a></li>
+  <li><a href="https://www.chaijs.com/">Chai</a></li>
+  <li><a href="https://joi.dev/api/?v=17.4.2">Joi</a></li>
+  <li><a href="https://www.npmjs.com/package/jsonwebtoken">JsonWebToken</a></li>
+</ul>
+
+
+<h3> Front-end </h3>
+<ul>
+  <li><a href="https://reactjs.org/">React</a></li>
+  <li><a href="https://redux.js.org/">Redux</a></li>
+  <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+  <li><a href="https://fkhadra.github.io/react-toastify/introduction">Toastify</a></li>
+  <li><a href="https://jestjs.io//">Jest</a></li>
+  <li><a href="https://testing-library.com/docs/react-testing-library/intro">React Testing Library</a></li>
+</ul>
+
+<h2> Instruções para executar o projeto localmente </h2>
+
+<h3 > Pré-requisitos </h3>
 
 ```bash
 # Clone este repositório
@@ -46,7 +49,7 @@ $ git clone git@github.com:leonardo-pinto/ebytr-mern-challenge.git
 $ cd ebytr-mern-challenge
 ```
 
-### Front-end
+<h3> Executando o front-end </h3>
 
 Utilizando npm
 
@@ -90,7 +93,7 @@ $ yarn run test:coverage
 ```
 ---
 
-### Back-end
+<h3> Executando o back-end </h3>
 
 Utilizando npm
 ```bash
@@ -135,7 +138,7 @@ $ yarn run test:coverage
 ---
 
 
-## Autor
+<h2> Autor </h2>
 
 Leonardo Pinto
 
