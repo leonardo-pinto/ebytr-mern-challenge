@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { userLogin } from '../../redux/actions/userActions';
-import { todoIcon } from '../../services/todosIcons';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -41,10 +40,6 @@ function LoginForm() {
       items-center bg-purple-100 mx-auto border-2
       border-solid border-black rounded-lg w-4/5 sm:w-2/4 md:w-5/12"
     >
-      <div className="flex justify-center items-center p-4">
-        {todoIcon()}
-        <h1 className="text-2xl">Ebytr To Do List</h1>
-      </div>
       <form
         className="w-full flex flex-col justify-center items-center"
         onSubmit={ handleSubmit }

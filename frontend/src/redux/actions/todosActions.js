@@ -11,6 +11,7 @@ export const getTodos = () => async (dispatch) => {
       todo: response.data,
     });
   } catch (err) {
+    localStorage.removeItem('token');
     console.log(err.response);
     toast.error(err.response.data.message, {
       position: toast.POSITION.TOP_RIGHT,

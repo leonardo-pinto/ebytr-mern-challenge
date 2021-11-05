@@ -3,7 +3,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../../redux/actions/userActions';
-import { todoIcon, signOutIcon } from '../../services/todosIcons';
+import { signOutIcon } from '../../services/todosIcons';
 
 function Header() {
   const dispatch = useDispatch();
@@ -32,10 +32,6 @@ function Header() {
             {signOutIcon()}
           </button>
         </span>
-      </div>
-      <div className="flex justify-center items-center p-4 my-1">
-        {todoIcon()}
-        <h1 data-testid="title" className="text-2xl">Ebytr To Do List</h1>
       </div>
     </header>
   );
