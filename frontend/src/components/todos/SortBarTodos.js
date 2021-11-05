@@ -23,11 +23,11 @@ function SortBarTodos() {
 
   return (
     <div className="flex p-2 justify-center items-center">
-      <p>Sort by:</p>
+      <p className="text-white text-lg sm:text-xl">Sort by:</p>
       <select
         data-testid="select-parameter"
-        className="bg-white rounded-lg p-1 m-4 border
-        border-transparent focus:ring-2 focus:ring-blue-600"
+        className="bg-white rounded p-1 m-4 border
+        focus:ring-2 focus:ring-black"
         name="parameter"
         onChange={ handleSortParameter }
       >

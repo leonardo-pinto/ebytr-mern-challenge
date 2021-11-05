@@ -5,7 +5,7 @@ export function AddIcon() {
   return (
     <svg
       data-testid="add-icon"
-      className="w-6 h-6"
+      className="text-white w-8 h-8"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ export function SortDesIcon() {
   return (
     <svg
       data-testid="sort-des-icon"
-      className="w-6 h-6"
+      className="text-white w-8 h-8"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -129,7 +129,7 @@ export function SortAscIcon() {
   return (
     <svg
       data-testid="sort-asc-icon"
-      className="w-6 h-6"
+      className="text-white w-8 h-8"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"

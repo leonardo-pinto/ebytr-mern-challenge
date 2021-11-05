@@ -11,7 +11,7 @@ function Title() {
         Ebytr To Do List
       </h1>
       <p
-        className="italic p-1 sm:text-lg md:text-xl"
+        className="text-center italic p-1 sm:text-lg md:text-xl"
       >
         A time management system perfect for you
       </p>
