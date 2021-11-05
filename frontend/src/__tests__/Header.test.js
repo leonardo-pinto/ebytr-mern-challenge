@@ -15,8 +15,6 @@ const initialState = {
 
 const signoutBtnId = 'signout-btn';
 const usernameTextId = 'username-text';
-const titleId = 'title';
-const todoIconId = 'todo-icon';
 
 describe('Header component', () => {
   it('renders all texts, buttons and icons', () => {
@@ -26,13 +24,9 @@ describe('Header component', () => {
 
     const signoutBtn = screen.getByTestId(signoutBtnId);
     const usernameText = screen.getByTestId(usernameTextId);
-    const title = screen.getByTestId(titleId);
-    const todoIcon = screen.getByTestId(todoIconId);
 
     expect(signoutBtn).toBeInTheDocument();
     expect(usernameText).toBeInTheDocument();
-    expect(title).toBeInTheDocument();
-    expect(todoIcon).toBeInTheDocument();
   });
 
   it('signout button changes the store state', () => {
