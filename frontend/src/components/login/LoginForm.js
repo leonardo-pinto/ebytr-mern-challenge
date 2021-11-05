@@ -37,7 +37,7 @@ function LoginForm() {
   return (
     <div
       className="p-2 flex flex-col justify-center
-      items-center bg-purple-100 mx-auto border-2
+      items-center bg-green-400 mx-auto border-2
       border-solid border-black rounded-lg w-4/5 sm:w-2/4 md:w-5/12"
     >
       <form
@@ -47,7 +47,7 @@ function LoginForm() {
         <input
           name="email"
           className="w-3/4 py-2 px-3 my-2 rounded
-          focus:ring-2 focus:ring-blue-600 text-gray-700"
+          focus:ring-2 focus:ring-black text-black"
           type="email"
           data-testid="email-input-login"
           value={ email }
@@ -57,7 +57,7 @@ function LoginForm() {
         <input
           name="password"
           className="w-3/4 py-2 px-3 my-2 rounded
-          focus:ring-2 focus:ring-blue-600 text-gray-700"
+          focus:ring-2 focus:ring-black text-black"
           type="password"
           value={ password }
           data-testid="password-input-login"
@@ -66,8 +66,8 @@ function LoginForm() {
         />
         <button
           type="submit"
-          className="bg-purple-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded-full m-3"
+          className="bg-black hover:bg-blue-700 text-white
+          font-bold py-2 px-4 rounded-full m-3 sm:text-xl"
           data-testid="button-login"
           disabled={ disableLoginBtn }
         >
@@ -75,9 +75,13 @@ function LoginForm() {
         </button>
       </form>
       <div className="flex flex-col justify-center items-center p-1">
-        <p className="p-1 text-lg">Don&apos;t have an account?</p>
+        <p
+          className="text-white p-1 text-lg sm:text-xl md:text-2xl"
+        >
+          Don&apos;t have an account?
+        </p>
         <Link
-          className="p-1 text-pink-600"
+          className="font-semibold text-white p-1 sm:text-lg md:text-xl"
           to="/signup"
         >
           Sign Up now!

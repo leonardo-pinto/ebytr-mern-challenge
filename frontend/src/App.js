@@ -6,7 +6,6 @@ import { loadUser } from './redux/actions/userActions';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Todos from './pages/Todos';
-import Title from './components/title/Title';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,8 +15,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="h-screen heropattern-formalinvitation-red-100">
-      <Title />
+    <div className="h-screen heropattern-wiggle-gray-300">
       <Switch>
         <Route path="/login" component={ Login } />
         <Route path="/signup" component={ Signup } />

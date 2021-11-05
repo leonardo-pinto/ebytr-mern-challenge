@@ -175,7 +175,7 @@ export function signOutIcon() {
   return (
     <svg
       data-testid="signout-icon"
-      className="w-6 h-6"
+      className="text-white w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
