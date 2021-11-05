@@ -21,6 +21,7 @@ const nameInputId = 'name-input-signup';
 const emailInputId = 'email-input-signup';
 const passwordInputId = 'password-input-signup';
 const signupBtnId = 'button-signup';
+const returnLoginId = 'return-login';
 
 jest.mock('axios');
 
@@ -34,11 +35,13 @@ describe('SignupForm component', () => {
     const email = screen.getByTestId(emailInputId);
     const password = screen.getByTestId(passwordInputId);
     const signupBtn = screen.getByTestId(signupBtnId);
+    const returnLogin = screen.getByTestId(returnLoginId);
 
     expect(name).toBeInTheDocument();
     expect(email).toBeInTheDocument();
     expect(password).toBeInTheDocument();
     expect(signupBtn).toBeInTheDocument();
+    expect(returnLogin).toBeInTheDocument();
   });
 
   it('user is able to fill name, email and password inputs', () => {

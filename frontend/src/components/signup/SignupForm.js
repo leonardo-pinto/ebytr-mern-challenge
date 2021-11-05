@@ -91,12 +91,12 @@ function SignupForm() {
         >
           Sign Up
         </button>
-        <Link to="/">
+        <Link to="/login">
           <button
-            type="submit"
+            type="button"
             className="bg-black text-white
             font-bold py-2 px-4 rounded-full m-3 sm:text-xl"
-            data-testid="button-signup"
+            data-testid="return-login"
           >
             Return to login
           </button>
