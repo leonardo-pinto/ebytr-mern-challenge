@@ -37,7 +37,7 @@ function LoginForm() {
   return (
     <div
       className="p-2 flex flex-col justify-center
-      items-center bg-green-400 mx-auto border-2
+      items-center bg-green-400 heropattern-charliebrown-gray-200 mx-auto border-2
       border-solid border-black rounded-lg w-4/5 sm:w-2/4 md:w-5/12"
     >
       <form
@@ -76,12 +76,12 @@ function LoginForm() {
       </form>
       <div className="flex flex-col justify-center items-center p-1">
         <p
-          className="text-white p-1 text-lg sm:text-xl md:text-2xl"
+          className="p-1 text-lg sm:text-xl md:text-2xl"
         >
           Don&apos;t have an account?
         </p>
         <Link
-          className="font-semibold text-white p-1 sm:text-lg md:text-xl"
+          className="font-semibold p-1 sm:text-lg md:text-xl"
           to="/signup"
         >
           Sign Up now!

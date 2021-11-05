@@ -15,7 +15,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="h-screen heropattern-wiggle-gray-300 bg-repeat">
+    <div className="">
       <Switch>
         <Route path="/login" component={ Login } />
         <Route path="/signup" component={ Signup } />

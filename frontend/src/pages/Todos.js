@@ -18,9 +18,9 @@ function Todos() {
       <Header />
       <Title />
       <div
-        className="p-2 flex flex-col justify-center
-          items-center bg-green-400 mx-auto border-2
-          border-solid border-black rounded-lg w-3/4 sm:w-1/2"
+        className="py-0.5 px-1 sm:p-2 flex flex-col justify-center items-center
+          bg-green-400 heropattern-charliebrown-gray-200 mx-auto my-2 border-2
+          border-solid border-black rounded-lg w-11/12 sm:w-1/2 md:w-2/5"
       >
         <ToastContainer />
         <AddTodo />

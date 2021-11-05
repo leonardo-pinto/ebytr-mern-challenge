@@ -50,7 +50,7 @@ function Todo(props) {
         ? (
           <div
             className="flex justify-center
-            items-center bg-green-200 mx-auto my-4 border-2
+            items-center bg-green-200 mx-auto my-1 sm:my-4 border-2
             border-black rounded-lg w-full"
           >
             <div>
@@ -85,15 +85,15 @@ function Todo(props) {
         : (
           <div
             className="flex flex-col justify-center
-            items-center bg-green-200 mx-auto my-4 border-2
+            items-center bg-green-200 mx-auto my-1 sm:my-4 border-2
             border-black rounded-lg w-full"
           >
             <div className="flex justify-center items-center">
               <p className="p-1">Task:</p>
               <input
                 data-testid="edit-todo-text-input"
-                className="w-3/4 py-1 px-2 m-0 sm:m-2 rounded
-                focus:ring-2 focus:ring-black text-black"
+                className="w-3/4 py-0.5 sm:py-2 px-3 m-1 sm:m-2 rounded focus:ring-2
+                focus:ring-black text-black"
                 type="text"
                 name="todo"
                 value={ editedTodo.todo }
@@ -105,7 +105,7 @@ function Todo(props) {
               <select
                 data-testid="edit-status-select"
                 name="status"
-                className="bg-white rounded p-1 m-0 sm:m-2 border
+                className="bg-white rounded p-0.5 m-0.5 sm:m-4 border
                 focus:ring-2 focus:ring-black"
                 onChange={ handleEditedTodo }
               >
@@ -114,7 +114,7 @@ function Todo(props) {
                 <option value="Done">Done</option>
               </select>
               <button
-                className="m-4"
+                className="m-0 sm:m-2"
                 data-testid="confirm-edit-todo-btn"
                 type="button"
                 onClick={ () => handleConfirmEditButtonClick() }

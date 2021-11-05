@@ -22,8 +22,8 @@ function SortBarTodos() {
   };
 
   return (
-    <div className="flex justify-center p-2 justify-center items-center">
-      <p className="text-white text-lg sm:text-xl">Sort by:</p>
+    <div className="flex justify-center sm:p-2 justify-center items-center">
+      <p className="font-medium text-lg sm:text-xl">Sort by:</p>
       <select
         data-testid="select-parameter"
         className="bg-white rounded p-1 m-2 sm:m-4 border

@@ -45,7 +45,7 @@ function SignupForm() {
   return (
     <div
       className="p-2 flex flex-col justify-center
-      items-center bg-green-400 mx-auto border-2
+      items-center bg-green-400 heropattern-charliebrown-gray-200 mx-auto border-2
       border-solid border-black rounded-lg w-4/5 sm:w-2/4 md:w-5/12"
     >
       <form
