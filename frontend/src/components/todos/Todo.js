@@ -50,17 +50,17 @@ function Todo(props) {
         ? (
           <div
             className="flex justify-center
-            items-start bg-green-200 mx-auto my-4 border-2
+            items-center bg-green-200 mx-auto my-4 border-2
             border-black rounded-lg w-full"
           >
             <div>
-              <p className="px-1 py-2" data-testid="todo-text">
+              <p className="p-1" data-testid="todo-text">
                 {`Task: ${todo}`}
               </p>
-              <p className="px-1 py-2" data-testid="todo-status">
+              <p className="p-1" data-testid="todo-status">
                 {`Status: ${status}`}
               </p>
-              <p className="text-sm px-1 py-2" data-testid="todo-createdat">
+              <p className="text-sm p-1" data-testid="todo-createdat">
                 {`Created at: ${createdAt}`}
               </p>
             </div>
@@ -89,7 +89,7 @@ function Todo(props) {
             border-black rounded-lg w-full"
           >
             <div className="flex justify-center items-center">
-              <p className="px-1 py-2">Task:</p>
+              <p className="p-1">Task:</p>
               <input
                 data-testid="edit-todo-text-input"
                 className="w-3/4 py-1 px-2 m-0 sm:m-2 rounded
@@ -101,7 +101,7 @@ function Todo(props) {
               />
             </div>
             <div className="flex justify-center items-center">
-              <p className="px-1 py-2">Status:</p>
+              <p className="p-1">Status:</p>
               <select
                 data-testid="edit-status-select"
                 name="status"

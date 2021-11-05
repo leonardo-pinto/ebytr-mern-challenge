@@ -20,7 +20,7 @@ function Todos() {
       <div
         className="p-2 flex flex-col justify-center
           items-center bg-green-400 mx-auto border-2
-          border-solid border-black rounded-lg w-11/12 sm:w-2/4 md:w-8/12"
+          border-solid border-black rounded-lg w-3/4 sm:w-1/2"
       >
         <ToastContainer />
         <AddTodo />

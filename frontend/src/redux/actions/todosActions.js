@@ -27,6 +27,9 @@ export const addTodo = (todo) => async (dispatch) => {
       type: 'ADD_TODO',
       todo: response.data,
     });
+    toast.success('Todo created successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   } catch (err) {
     console.log(err.response);
     toast.error(err.response.data.message, {
@@ -41,6 +44,9 @@ export const deleteTodo = (_id) => async (dispatch) => {
     dispatch({
       type: 'DELETE_TODO',
       _id,
+    });
+    toast.success('Todo deleted successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
     });
   } catch (err) {
     console.log(err.response);
@@ -62,6 +68,9 @@ export const updateTodo = (editedTodo) => async (dispatch) => {
       todo,
       status,
       createdAt,
+    });
+    toast.success('Todo update successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
     });
   } catch (err) {
     console.log(err.response);
