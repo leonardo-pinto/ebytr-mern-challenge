@@ -1,6 +1,6 @@
 <h1> Boas vindas ao repositório do projeto Ebytr To Do ! </h1>
 
-<p align=center>Esse projeto consiste na resolução do desafio técnico proposto no processo seletivo da Ebytr para a vaga de pessoa desenvolvedora jr.</p>
+<p align=justify>Esse projeto consiste na resolução do desafio técnico proposto no processo seletivo da Ebytr para a vaga de pessoa desenvolvedora jr.</p>
 
 ---
 
