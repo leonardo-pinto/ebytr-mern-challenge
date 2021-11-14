@@ -31,7 +31,7 @@ function LoginForm() {
 
   useEffect(() => {
     const format = /\S+@\S+\.\S+/;
-    const minPasswordLength = 6;
+    const minPasswordLength = 5;
     if (password.length > minPasswordLength && email.match(format)) {
       setDisableLoginBtn(false);
     } else {
