@@ -3,6 +3,11 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { userLogin } from '../../redux/actions/userActions';
 
+const disabledBtnStyle = `border-black bg-gray-400 border-2 border-black
+text-whitefont-bold py-2 px-4 rounded-full m-3 sm:text-xl`;
+const enabledBtnStyle = `border-black border-2 bg-green-400 text-white border-black
+font-bold py-2 px-4 rounded-full m-3 sm:text-xl`;
+
 function LoginForm() {
   const dispatch = useDispatch();
   const [loginInput, setLoginInput] = useState({
@@ -66,8 +71,9 @@ function LoginForm() {
         />
         <button
           type="submit"
-          className="bg-black text-white
-          font-bold py-2 px-4 rounded-full m-3 sm:text-xl"
+          className={ disableLoginBtn
+            ? disabledBtnStyle
+            : enabledBtnStyle }
           data-testid="button-login"
           disabled={ disableLoginBtn }
         >
