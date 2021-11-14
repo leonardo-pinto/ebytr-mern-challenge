@@ -1,4 +1,4 @@
-export const apiUrl = 'https://ebytr-to-do.herokuapp.com/';
+export const apiUrl = 'https://ebytr-to-do.herokuapp.com';
 
 export function setHeaders() {
   const header = {
