@@ -30,7 +30,7 @@ function SignupForm() {
   useEffect(() => {
     const format = /\S+@\S+\.\S+/;
     const minNameLength = 5;
-    const minPasswordLength = 6;
+    const minPasswordLength = 5;
     if (
       name.length > minNameLength
       && password.length > minPasswordLength
