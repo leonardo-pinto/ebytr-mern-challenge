@@ -15,6 +15,8 @@ app.options('*', cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get('/test', (req, res) => res.send('hellou'));
+
 app.use('/login', rescue(loginRoutes));
 app.use('/signup', rescue(signupRoutes));
 app.use('/todos', rescue(todosRoutes));
