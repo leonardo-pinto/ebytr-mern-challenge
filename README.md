@@ -1,19 +1,20 @@
-<h1> Boas vindas ao repositório do projeto Ebytr To Do ! </h1>
+<h1> EBYTR To Do List </h1>
 
-<p align=justify>Esse projeto consiste na resolução do desafio técnico proposto no processo seletivo da Ebytr para a vaga de pessoa desenvolvedora jr.</p>
+<h2> Description </h2>
 
----
+<p align=justify> This project consists of a todo list to practice full-stack skills. The application was created using the MERN stack, in which the back-end was developed with the MSC (models, services and controllers) software architecture, using NodeJs, Express and MongoDB. Front-end was developed using React and Redux.</p>
 
-<h2> Desenvolvimento </h2>
+<p align="justify"> The application consists of a todo list, in which the user may create, delete, and edit a task. Task may be sorted by creation date, current status or alphabetically. Moreover, an authentication system was developed using JWT (jsonwebtoken) for users login and signup.</p>
 
-<p align=justify>Foi desenvolvida uma aplicação full-stack de lista de tarefas. O back-end foi construído com a arquitetura MSC (model, service e controller) utilizando NodeJs, MongoDB e Express, enquanto que o front-end foi desenvolvido utilizando React. Tal combinação de frameworks é denominado de MERN, e sua escolha foi devido ao requisito do desafio técnico.</p>
-
-<p align=justify>A aplicação consiste em uma lista de tarefas, no qual o usuário pode criar, deletar e editar uma tarefa. O usuário também pode ordenar as tarefas criadas pelos campos de tarefa, status e data de criação. Além disso, a aplicação também possui uma área de login e cadastro de usuários.</p>
+<p align="justify"> Back-end integrations tests were performed using Mocha and Chai, while Front-end tests were developed using Jest and React Testing Library</p>
 
 ![Ebytr To Do](images/example.png?raw=true)
 ---
+  
+<h2>Application Deploy with Netlify</h2>
+<a href="https://ebytr-to-do.netlify.app/signup/">Ebytr To Do</a>
 
-<h2> Principais frameworks e bibliotecas utilizadas </h2>
+<h2> Frameworks and libraries </h2>
 
 <h3> Back-end </h3>
 <ul>
@@ -37,104 +38,61 @@
   <li><a href="https://testing-library.com/docs/react-testing-library/intro">React Testing Library</a></li>
 </ul>
 
-<h2> Instruções para executar o projeto localmente </h2>
+---
 
-<h3 > Pré-requisitos </h3>
+<h2> Getting Started </h2>
+
+<h3> Prerequisites </h3>
 
 ```bash
-# Clone este repositório
+# Clone the repository
 $ git clone git@github.com:leonardo-pinto/ebytr-mern-challenge.git
 
-# acesse o diretório criado
+# enter in the created directoy
 $ cd ebytr-mern-challenge
 ```
 
-<h3> Executando o front-end </h3>
+<h3> Running the front-end locally </h3>
 
-Utilizando npm
+Using npm
 
 ```bash
-# Acesse a pasta do projeto no terminal
+# enter in the frontend directory
 $ cd frontend
 
-# Instale as dependências
+# install the dependencies
 $ npm install
 
-# Execute a aplicação
+# run the app
 $ npm start
 
-# Execute os testes
+# run tests
 $ npm test
 
-# Execute a cobertura dos testes
+# run tests coverage
 $ npm run test:coverage
 ```
-
-Utilizando yarn
+Using yarn
 
 ```bash
-# Acesse a pasta do projeto no terminal
+# enter in the frontend directory
 $ cd frontend
 
-# Instale as dependências
+# install the dependencies
 $ yarn
 
-# Instale as dependencias extras necessarias
+# install extxra dependencies, if needed
 $ yarn add
 
-# Execute a aplicação
+# run the app
 $ yarn start
 
-# Execute os testes
+# run tests
 $ yarn test
 
-# Execute a cobertura dos testes
+# run tests coverage
 $ yarn run test:coverage
 ```
----
-
-<h3> Executando o back-end </h3>
-
-Utilizando npm
-```bash
-# Acesse a pasta do projeto no terminal
-$ cd backend
-
-# Instale as dependências
-$ npm install
-
-# Execute a aplicação
-$ npm run dev
-
-# Execute os testes
-$ npm test
-
-# Execute a cobertura dos testes
-$ npm run test:coverage
-```
-
-Utilizando yarn
-
-```bash
-# Acesse a pasta do projeto no terminal
-$ cd backend
-
-# Instale as dependências
-$ yarn
-
-# Instale as dependencias extras necessarias
-$ yarn add
-
-# Execute a aplicação
-$ yarn start
-
-# Execute os testes
-$ yarn test
-
-# Execute a cobertura dos testes
-$ yarn run test:coverage
-```
-
 ---
 
 
