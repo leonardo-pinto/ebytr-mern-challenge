@@ -66,7 +66,7 @@ function LoginForm() {
           type="password"
           value={ password }
           data-testid="password-input-login"
-          placeholder="Insert your password"
+          placeholder="Insert your password (at least 6 digits)"
           onChange={ handleLoginInput }
         />
         <button
