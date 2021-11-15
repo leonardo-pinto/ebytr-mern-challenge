@@ -64,7 +64,7 @@ function SignupForm() {
           type="text"
           data-testid="name-input-signup"
           value={ name }
-          placeholder="Insert your name"
+          placeholder="Insert your name (at least 6 digits)"
           onChange={ handleSignupInput }
         />
         <input
@@ -74,7 +74,7 @@ function SignupForm() {
           type="email"
           data-testid="email-input-signup"
           value={ email }
-          placeholder="Insert your email"
+          placeholder="Insert your email (xxx@xxx.com)"
           onChange={ handleSignupInput }
         />
         <input
@@ -84,7 +84,7 @@ function SignupForm() {
           type="password"
           value={ password }
           data-testid="password-input-signup"
-          placeholder="Insert your password"
+          placeholder="Insert your password (at least 6 digits)"
           onChange={ handleSignupInput }
         />
         <button
